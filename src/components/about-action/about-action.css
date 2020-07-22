@@ -1,9 +1,21 @@
 .AboutAction {
-  padding: 104px 0 74px;
+  padding: 70px 0 74px;
+}
+
+@media (min-width: 768px) {
+  .AboutAction {
+    padding: 86px 0 131px;
+  }
 }
 
 .AboutAction__title {
-  margin-bottom: 56px;
+  margin-bottom: 74px;
+}
+
+@media (min-width: 768px) {
+  .AboutAction__title {
+    margin-bottom: 104px;
+  }
 }
 
 .AboutAction__list {
@@ -17,6 +29,7 @@
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    margin: 0 -16px;
   }
 }
 
@@ -28,8 +41,6 @@
 }
 
 .AboutActionItem {
-  position: relative;
-  overflow: hidden;
   margin-bottom: 44px;
 }
 
@@ -40,6 +51,7 @@
 @media (min-width: 768px) {
   .AboutActionItem {
     flex: 0 0 50%;
+    margin-bottom: 80px;
   }
 }
 
@@ -55,12 +67,18 @@
   align-items: flex-start;
   justify-content: flex-end;
   flex-direction: column;
-  height: 160px;
   margin-bottom: 14px;
+  position: relative;
 }
 
 .AboutActionItem__img {
   margin-bottom: 20px;
+}
+
+@media (min-width:768px) {
+  .AboutActionItem__title__inline {
+    display: block;
+  }
 }
 
 .AboutActionItem__text {
@@ -74,9 +92,7 @@
 
 .AboutActionItem__bg {
   position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
+  bottom: 44px;
 }
 
 .AboutActionItem__bg--0 {
