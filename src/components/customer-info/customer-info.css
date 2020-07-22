@@ -1,0 +1,149 @@
+.CustomerInfo {
+  padding: 40px 0;
+}
+
+.CustomerInfo__title {
+  margin-bottom: 16px;
+}
+
+.CustomerInfo__text {
+  font-family: 'SourceSansPro', sans-serif;
+  font-weight: normal;
+  color: #494949;
+  max-width: 550px;
+  font-size: 18px;
+  line-height: 23px;
+  margin-bottom: 42px;
+}
+
+@media (min-width: 768px) {
+  .CustomerInfo__text {
+    font-size: 24px;
+    line-height: 30px;
+    margin-bottom: 48px;
+  }
+}
+
+.CustomerInfo__main {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .CustomerInfo__main {
+    flex-direction: row;
+    margin-bottom: 48px;
+  }
+}
+
+.CustomerInfo__img-block {
+  flex: 0 0 50%;
+  max-width: 340px;
+  box-sizing: border-box;
+  margin-bottom: 28px;
+}
+
+@media (min-width: 768px) {
+  .CustomerInfo__img-block {
+    max-width: 100%;
+    padding-right: 72px;
+    margin-bottom: 0;
+  }
+}
+
+.CustomerInfo__img-block__img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.CustomerInfo__footer {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .CustomerInfo__footer {
+    flex-direction: row;
+    
+    align-items: center;
+  }
+}
+
+.CustomerInfo__footer__block {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .CustomerInfo__footer__block {
+    margin-top: 0;
+  }
+}
+
+.CustomerInfo__footer__block__img {
+  width: 24px;
+  margin-right: 16px;
+}
+
+.CustomerInfo__footer__block__text {
+  font-family: 'SourceSansProBold', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000;
+  transition: 0.4s;
+}
+
+.CustomerInfo__footer__block:hover .CustomerInfo__footer__block__text {
+  color: #428B26;
+}
+
+.CustomerInfoList__item {
+  font-family: 'SquadExtraBold', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1B1F27;
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .CustomerInfoList__item {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.CustomerInfoList__item:last-child {
+  margin-bottom: 0;
+}
+
+.CustomerInfoList__item:before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #52AE30;
+  position: absolute;
+  left: 0;
+  top: 8px;
+}
+
+@media (min-width: 768px) {
+  .CustomerInfoList__item:before {
+    top: 12px;
+  }
+}
+
+.CustomerInfoList__item__green {
+  color: #428B26;
+}

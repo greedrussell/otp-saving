@@ -1,0 +1,84 @@
+.CalculatorMonthTabs {
+  padding-bottom: 8px;
+}
+
+@media (min-width: 768px) {
+  .CalculatorMonthTabs__list {
+    padding-bottom: 26px;
+  }
+}
+
+.CalculatorMonthTabs__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 992px) {
+  .CalculatorMonthTabs__list {
+    flex-wrap: nowrap;
+  }
+}
+
+.CalculatorMonthTabs__title {
+  margin-bottom: 8px;
+}
+
+.Tab {
+  border: 1px solid #B8B8B8;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 8px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #1B1F27;
+  cursor: pointer;
+  margin-bottom: 16px;
+  margin-right: 16px;
+  transition: 0.4s;
+}
+
+.Tab:last-child {
+  margin-right: 0;
+}
+
+@media (min-width: 768px) {
+  .Tab {
+    margin-bottom: 0;
+  }
+}
+
+.Tab.active {
+  border: 1px solid #52AE30;
+  box-shadow: 0 0 0 1px #52AE30;
+}
+
+.Tab__title {
+  font-family: 'SourceSansProBold', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  white-space: nowrap;
+  color: #000;
+}
+
+.Tab__sub-title {
+  font-family: 'SourceSansPro', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  white-space: nowrap;
+  color: #939393;
+}
+
+@media (min-width: 1200px) {
+  .Tab__sub-title {
+    font-size: 14px;
+  }
+}
+
+.Tab.active .Tab__title,
+.Tab.active .Tab__sub-title {
+  color: #52AE30;
+}

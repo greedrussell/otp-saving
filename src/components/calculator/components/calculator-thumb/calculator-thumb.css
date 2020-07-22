@@ -1,0 +1,23 @@
+.CalculatorThump {
+  background-color: #52AE30;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  position: relative;
+  z-index: 2;
+}
+
+.CalculatorThump__left-arrow {
+  width: 6px;
+  height: 12px;
+  margin-right: 6px;
+}
+
+.CalculatorThump__rigth-arrow {
+  width: 6px;
+  height: 12px;
+}

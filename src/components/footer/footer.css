@@ -1,0 +1,133 @@
+.Footer {
+  background: #EFF2F9;
+}
+
+.Footer__top {
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .Footer__top {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+}
+
+.Footer__bottom {
+  font-family: 'SourceSansPro', sans-serif;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: #FFFFFF;
+  background-color: #52AE30;
+  border-top-left-radius: 44px;
+  border-top-right-radius: 44px;
+}
+
+.Footer__bottom__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 0;
+}
+
+@media (min-width: 768px) {
+  .Footer__bottom__wrapper {
+    padding: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 120px;
+  }
+}
+
+.Footer__bottom__img {
+  width: 112px;
+}
+
+.Footer__bottom__text {
+  margin-bottom: 8px;
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .Footer__bottom__text {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+.FooterMenu {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #E2E6F0;
+  margin-bottom: 22px;
+}
+
+@media (min-width: 768px) {
+  .FooterMenu {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+}
+
+.FooterMenu__item {
+  margin-bottom: 8px;
+}
+
+.FooterMenu__item:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .FooterMenu__item {
+    margin-bottom: 0;
+  }
+}
+
+.FooterMenu__item__link {
+  font-family: 'SourceSansProBold', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 32px;
+  color: #1B1F27;
+  padding: 0 0 26px;
+  display: block;
+  transition: 0.4s;
+}
+
+.FooterMenu__item__link:hover {
+  color: #428B26;
+}
+
+@media (min-width: 768px) {
+  .FooterMenu__item__link {
+    padding: 32px 0;
+  }
+}
+
+.Contact {
+  display: flex;
+  flex-direction: column;
+}
+
+.Contact__title {
+  font-family: 'SourceSansProBold', sans-serif;
+  font-weight: bold;
+  color: #494949;
+  font-size: 18px;
+  line-height: 32px;
+  margin-bottom: 7px;
+}
+
+.Contact__link {
+  font-family: 'SourceSansProBold', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  color: #1B1F27;
+  line-height: 32px;
+  margin-bottom: 4px;
+  align-self: baseline;
+}
