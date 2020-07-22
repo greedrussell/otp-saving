@@ -1,0 +1,193 @@
+.ActionInfo {
+  background-color: #DBF4FA;
+  padding: 50px 0;
+}
+
+.ActionInfo__wrapper {
+  display: flex;
+  position: relative;
+}
+
+.ActionInfo__left {
+  flex: 1 0;
+  min-width: 0;
+}
+
+.ActionInfo__left__title {
+  font-family: 'SquadExtraBold', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #000;
+  font-size: 34px;
+  line-height: 48px;
+}
+
+@media (min-width: 768px) {
+  .ActionInfo__left__title {
+    font-size: 56px;
+    line-height: 72px;
+    margin-bottom: 32px;
+    max-width: 50%;
+  }
+}
+
+.ActionInfo__left__text {
+  font-family: 'SquadExtraBold', sans-serif;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 28px;
+  color: #494949;
+}
+
+@media (min-width: 768px) {
+  .ActionInfo__left__text {
+    font-size: 24px;
+    line-height: 32px;
+    max-width: 50%;
+  }
+}
+
+.ActionInfo__left__text + .ToggleButton {
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .ActionInfo__left__text + .ToggleButton {
+    margin-top: 20px;
+  }
+}
+
+.ActionInfo__right {
+  position: absolute;
+  right: 0;
+  top: -14px;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .ActionInfo__right {
+    display: block;
+  }
+}
+
+.ActionInfo__right__img {
+  height: 248px;
+  width: auto;
+  display: block;
+}
+
+.InfoBlock {
+  margin-top: 50px;
+}
+
+@media (min-width: 768px) {
+  .InfoBlock {
+    margin-top: 74px;
+  }
+}
+
+
+.InfoBlock + .ToggleButton {
+  margin-top: 28px;
+}
+
+@media (min-width: 768px) {
+  .InfoBlock + .ToggleButton {
+    margin-top: 38px;
+  }
+}
+
+.InfoBlock__content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.InfoBlock__content__item {
+  flex: 1 0;
+  min-width: 290px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .InfoBlock__content__item {
+    margin-bottom: 0;
+  }
+
+  .InfoBlock__content__item:first-child {
+    margin-right: 66px;
+  }
+}
+
+.InfoBlock__content__item__title {
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .InfoBlock__content__item__title {
+    font-size: 32px;
+    line-height: 52px;
+  }
+}
+
+.InfoBlock__content__item__text {
+  font-size: 20px;
+  line-height: 28px;
+  color: #000;
+}
+
+.InfoBlock__pdf-block {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .InfoBlock__pdf-block {
+    margin-top: 34px;
+  }
+}
+
+.InfoBlock__pdf-block:hover .InfoBlock__pdf-block__text {
+  color: #428B26;
+}
+
+.InfoBlock__pdf-block__img {
+  height: 24px;
+  width: 24px;
+  margin-right: 16px;
+}
+
+.InfoBlock__pdf-block__text {
+  font-family: 'SourceSansProBold', sans-serif;
+  font-weight: bold;
+  color: #000;
+  font-size: 16px;
+  line-height: 24px;
+  margin-top: 2px;
+  transition: 0.4s;
+}
+
+.ToggleButton {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ToggleButton__text {
+  font-family: 'SourceSansProBold', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  color: #428B26;
+  transition: 0.4s;
+}
+
+.ToggleButton:hover .ToggleButton__text {
+  color: #428B26;
+}
+
+.ToggleButton__img {
+  margin-left: 15px;
+  width: 12px;
+  height: 8px;
+}
