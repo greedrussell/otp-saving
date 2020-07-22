@@ -1,0 +1,143 @@
+.HeroImg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 860px;
+  padding: 104px 0 56px;
+  background: rgba(25,25,25,0.25) url('../../assets/img/hero-img__mobile.png');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .HeroImg {
+    background-image: url('../../assets/img/hero-img__banner.png');
+  }
+}
+
+@media (min-width: 1600px) {
+  .HeroImg {
+    padding: 205px 0 98px;
+  }
+}
+
+.HeroImg__nav {
+  position: absolute;
+  left: 16px;
+  top: -78px;
+}
+
+@media (min-width: 768px) {
+  .HeroImg__nav {
+    left: 32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .HeroImg__nav {
+    left: 16px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .HeroImg__nav {
+    top: -104px;
+  }
+}
+
+.HeroImg__title {
+  color: #fff;
+  font-family: 'SquadExtraBold', sans-serif;
+  font-weight: 800;
+  margin-bottom: 34px;
+  font-size: 40px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .HeroImg__title {
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .HeroImg__title {
+    font-size: 60px;
+    line-height: 68px;
+    margin-bottom: 42px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .HeroImg__title {
+    font-size: 72px;
+    line-height: 88px;
+  }
+}
+
+@media (min-width: 768px) {
+  .HeroImg__title__inline {
+    display: inline-block;
+  }
+}
+
+.HeroImg__list {
+  margin-bottom: 34px;
+  position: relative;
+  padding-left: 58px;
+}
+
+@media (min-width: 1600px) {
+  .HeroImg__list {
+    margin-bottom: 64px;
+  }
+}
+
+.HeroImg__list__item {
+  display: flex;
+  margin-bottom: 26px;
+}
+
+@media (min-width: 1600px) {
+  .HeroImg__list__item {
+    height: 32px;
+    margin-bottom: 36px;
+    align-items: center;
+  }
+}
+
+.HeroImg__list__item__img {
+  position: absolute;
+  left: 0;
+}
+
+.HeroImg__list__item__text {
+  font-family: 'SourceSansProBold';
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #fff;
+  max-width: 660px;
+}
+
+@media (min-width: 1600px) {
+  .HeroImg__list__item__text {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+.HeroImg__btn {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .HeroImg__btn {
+    width: auto;
+  }
+}
