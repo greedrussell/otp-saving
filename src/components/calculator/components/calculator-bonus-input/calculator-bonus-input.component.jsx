@@ -1,4 +1,4 @@
-import React from '../../../customer-info/node_modules/react'
+import React from 'react'
 
 import './calculator-bonus-input.css'
 import CalculatorRangeSlider from '../calculator-range/calculator-range.component'

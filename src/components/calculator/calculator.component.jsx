@@ -1,88 +1,49 @@
-import React from '../customer-info/node_modules/react'
+import React from 'react'
 
 import './calculator.css'
-import CalculatorTariffTabs from './components/calculator-tariff-tabs/calculator-tariff-tabs.component'
 import CalculatorInfoPanel from './components/calculator-info-panel/calculator-info-panel.component'
+import PlusesList from './components/pluses/pluses-list.component'
 import CalculatorInput from './components/calculator-input/calculator-input.component'
 import CalculatorMonthTabs from './components/calculator-month-tabs/calculator-month-tabs.component'
 import CalculatorBonusInput from './components/calculator-bonus-input/calculator-bonus-input.component'
-
-const TARIFF_LIST = [
-	{
-		id: 1,
-		name: 'Пенсионный',
-		deposit: [
-			{
-				id: 1,
-				month: 3,
-				percent: 3.9,
-				title: '3 месяца',
-				subTitle: '3.9% годовых',
-			},
-			{
-				id: 2,
-				month: 6,
-				percent: 4.4,
-				title: '6 месяцев',
-				subTitle: '4,4% годовых',
-			},
-			{
-				id: 3,
-				month: 12,
-				percent: 4.1,
-				title: '1 год',
-				subTitle: '4,1% годовых',
-			},
-		],
-		minDepositRate: 15000,
-		maxDepositRate: 10000000,
-	},
-	{
-		id: 2,
-		name: 'Максимальный',
-		deposit: [
-			{
-				id: 1,
-				month: 3,
-				percent: 3.8,
-				title: '3 месяца',
-				subTitle: '3.8% годовых',
-			},
-			{
-				id: 2,
-				month: 6,
-				percent: 4.5,
-				title: '6 месяцев',
-				subTitle: '4,5% годовых',
-			},
-			{
-				id: 4,
-				month: 12,
-				percent: 4,
-				title: '1 год',
-				subTitle: '4% годовых',
-			},
-		],
-		minDepositRate: 30000,
-		maxDepositRate: 30000000,
-	},
-]
 
 class Calculator extends React.Component {
 	constructor(props) {
 		super(props)
 
 		this.state = {
-			activeTariff: 0,
-			tariffName: '',
-			deposit: [],
-			minDepositRate: 0,
-			maxDepositRate: 0,
+			activeTariff: 1,
+			tariffName: 'Пенсионный',
+			deposit: [
+				{
+					id: 1,
+					month: 3,
+					percent: 3.9,
+					title: '3 месяца',
+					subTitle: '3.9% годовых',
+				},
+				{
+					id: 2,
+					month: 6,
+					percent: 4.4,
+					title: '6 месяцев',
+					subTitle: '4,4% годовых',
+				},
+				{
+					id: 3,
+					month: 12,
+					percent: 4.1,
+					title: '1 год',
+					subTitle: '4,1% годовых',
+				},
+			],
+			minDepositRate: 15000,
+			maxDepositRate: 10000000,
 			// для подсчета дохода
-			month: 0,
+			month: 3,
 			depositRate: 300000,
 			transactionRate: 15000,
-			percent: 0,
+			percent: 3.9,
 			bonusPercent: 0.5,
 			// finaly data
 			bonusSum: 0,
@@ -91,45 +52,16 @@ class Calculator extends React.Component {
 	}
 
 	componentDidMount() {
-		const tariff = TARIFF_LIST[0]
-		const tariffData = this.getActiveTariff(tariff)
-		const { bonusPercent, depositRate } = this.state
-		const sum = this.getSum(depositRate, tariffData.percent, tariffData.month)
-		const bonusSum = this.getBonusSum(
-			depositRate,
-			bonusPercent,
-			tariffData.month
-		)
+		const { bonusPercent, depositRate, percent, month } = this.state
+
+		const sum = this.getSum(depositRate, percent, month)
+		const bonusSum = this.getBonusSum(depositRate, bonusPercent, month)
 		const totalSum = sum + bonusSum
 
-		window.addEventListener('load', this.greenLineSetWidth)
-		window.addEventListener('resize', this.greenLineSetWidth)
-
 		this.setState({
-			...tariffData,
 			bonusSum,
 			totalSum,
 		})
-	}
-
-	getActiveTariff = tariff => {
-		const {
-			deposit,
-			minDepositRate,
-			maxDepositRate,
-			id: activeTariff,
-			name: tariffName,
-		} = tariff
-
-		return {
-			tariffName,
-			activeTariff,
-			deposit,
-			minDepositRate,
-			maxDepositRate,
-			percent: deposit[0].percent,
-			month: deposit[0].month,
-		}
 	}
 
 	getSum = (depositRate, percent, month) => {
@@ -368,61 +300,6 @@ class Calculator extends React.Component {
 		})
 	}
 
-	handleActiveTariffClick = activeTariff => () => {
-		const { bonusPercent, activeTariff: oldActiveTariff } = this.state
-
-		let depositRate = this.state.depositRate
-
-		if (oldActiveTariff === activeTariff) {
-			return
-		}
-
-		const tariffData = this.getActiveTariff(TARIFF_LIST[activeTariff - 1])
-		const { percent, month, minDepositRate, maxDepositRate } = tariffData
-
-		if (depositRate < minDepositRate) {
-			depositRate = minDepositRate
-		}
-
-		if (depositRate > maxDepositRate) {
-			depositRate = maxDepositRate
-		}
-
-		this.greenLineSetWidth(activeTariff)
-
-		const sum = this.getSum(depositRate, percent, month)
-		const bonusSum = this.getBonusSum(depositRate, bonusPercent, month)
-		const totalSum = sum + bonusSum
-
-		this.setState({
-			...tariffData,
-			activeTariff,
-			bonusSum,
-			totalSum,
-			depositRate,
-		})
-	}
-
-	greenLineSetWidth = (activeTariff = null) => {
-		let id = 0
-
-		if (isNaN(activeTariff)) {
-			id = this.state.activeTariff
-		} else {
-			id = activeTariff
-		}
-
-		const elem = document.querySelector(
-			`.CalculatorTariffTabs__item[data-id="${id}"]`
-		)
-		const elemWidth = elem.offsetWidth
-		const elemOffsetLeft = elem.offsetLeft
-		const line = document.querySelector('.CalculatorTariffTabs__green-line')
-
-		line.style.transform = `translateX(${elemOffsetLeft}px)`
-		line.style.width = `${elemWidth}px`
-	}
-
 	render() {
 		const {
 			percent,
@@ -435,25 +312,19 @@ class Calculator extends React.Component {
 			deposit,
 			month,
 			transactionRate,
-			activeTariff,
 		} = this.state
 
 		return (
 			<section className="Calculator">
 				<div className="container">
 					<h2 className="title-h2 Calculator__title">
-						Рассчитайте доход по вкладу
+						Рассчитайте свой доход <br /> по накопительному счету
 					</h2>
-					<CalculatorTariffTabs
-						tariffList={TARIFF_LIST}
-						activeTariff={activeTariff}
-						tariffName={tariffName}
-						handleActiveTariffClick={this.handleActiveTariffClick}
-					/>
+					<PlusesList />
 					<div className="Calculator__main">
 						<div className="Calculator__left">
 							{/* сумма депозита */}
-							<CalculatorInput
+							{/* <CalculatorInput
 								tariffName={tariffName}
 								depositRate={depositRate}
 								minDepositRate={minDepositRate}
@@ -462,26 +333,25 @@ class Calculator extends React.Component {
 								handleInputBlur={this.handleInputBlur}
 								handleInputChange={this.handleInputChange}
 								handleChange={this.handleInputRangeChange}
-							/>
-							<CalculatorMonthTabs
+							/> */}
+							{/* <CalculatorMonthTabs
 								deposit={deposit}
 								month={month}
 								handleClick={this.handleMonthClick}
-							/>
-							<CalculatorBonusInput
+							/> */}
+							{/* <CalculatorBonusInput
 								transactionRate={transactionRate}
 								bonusPercent={bonusPercent}
 								handleBonusInputChange={this.handleBonusInputChange}
 								handleBonusInputBlur={this.handleBonusInputBlur}
 								handleBonusInputRangeChange={this.handleBonusInputRangeChange}
-							/>
+							/> */}
 						</div>
 						<div className="Calculator__rigth">
 							<CalculatorInfoPanel
 								totalPercent={bonusPercent + percent}
 								bonusSum={this.getSumFormat(totalSum)}
 								finalSum={this.getSumFormat(totalSum + depositRate)}
-								tariffName={tariffName}
 								date={this.getDate()}
 							/>
 						</div>

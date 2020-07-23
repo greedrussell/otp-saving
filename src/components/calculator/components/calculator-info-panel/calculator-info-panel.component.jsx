@@ -1,15 +1,9 @@
-import React from '../../../customer-info/node_modules/react'
-import { Link } from '../../../customer-info/node_modules/react-scroll'
+import React from 'react'
+import { Link } from 'react-scroll'
 
 import './calculator-info-panel.css'
 
-const CalculatorInfoPanel = ({
-	date,
-	totalPercent,
-	bonusSum,
-	finalSum,
-	tariffName,
-}) => {
+const CalculatorInfoPanel = ({ date, totalPercent, bonusSum, finalSum }) => {
 	return (
 		<div className="CalculatorInfoPanel">
 			<h3 className="CalculatorInfoPanel__title">Сколько я заработаю</h3>
@@ -37,12 +31,6 @@ const CalculatorInfoPanel = ({
 					Открыть вклад
 				</button>
 			</Link>
-			{tariffName === 'Пенсионный' && (
-				<p className="CalculatorInfoPanel__info">
-					Вклад может оформить любой клиент, предоставивший пенсионное
-					удостоверение
-				</p>
-			)}
 		</div>
 	)
 }

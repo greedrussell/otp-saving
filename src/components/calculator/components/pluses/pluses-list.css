@@ -1,0 +1,48 @@
+.PlusesList {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 58px;
+}
+
+@media (min-width: 768px) {
+  .PlusesList {
+    margin-bottom: 0;
+  }
+}
+
+.PlusItem {
+  display: flex;
+  flex: 0 0 100%;
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+
+.PlusItem:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .PlusItem {
+    flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 992px) {
+  .PlusItem {
+    flex: 0 0 33%;
+    margin-bottom: 0;
+  }
+}
+
+.PlusItem__img {
+  width: 24px;
+  margin-right: 16px;
+}
+
+.PlusItem__text {
+  font-family: 'SourceSansPro', sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000000;
+}

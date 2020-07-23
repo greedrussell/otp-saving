@@ -1,4 +1,4 @@
-import React from '../../../customer-info/node_modules/react'
+import React from 'react'
 import { Range, getTrackBackground } from 'react-range'
 
 import './calculator-range.css'

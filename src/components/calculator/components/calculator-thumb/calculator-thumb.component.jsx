@@ -1,4 +1,4 @@
-import React from '../../../customer-info/node_modules/react'
+import React from 'react'
 
 import LeftArrowSVG from '../../../../assets/img/calculator__left-arrow.svg'
 import RigthArrowSVG from '../../../../assets/img/calculator__right-arrow.svg'
