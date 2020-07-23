@@ -11,6 +11,7 @@ const CalculatorInput = ({
 	handleInputBlur,
 	handleInputChange,
 	getSumFormat,
+	title = '',
 }) => {
 	if (!minDepositRate || !maxDepositRate) {
 		return null
@@ -20,9 +21,7 @@ const CalculatorInput = ({
 
 	return (
 		<div className="CalculatorInput">
-			<h3 className="Calculator__sub-title CalculatorInput__title">
-				Введите сумму вклада
-			</h3>
+			<h3 className="Calculator__sub-title CalculatorInput__title">{title}</h3>
 			<div className="CalculatorInput__block">
 				<input
 					type="text"

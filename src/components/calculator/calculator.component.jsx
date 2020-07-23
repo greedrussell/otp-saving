@@ -318,34 +318,39 @@ class Calculator extends React.Component {
 			<section className="Calculator">
 				<div className="container">
 					<h2 className="title-h2 Calculator__title">
-						Рассчитайте свой доход <br /> по накопительному счету
+						Рассчитайте доход&nbsp;
+						<span className="Calculator__title__inline">
+							по накопительному счету
+						</span>
 					</h2>
 					<PlusesList />
 					<div className="Calculator__main">
 						<div className="Calculator__left">
 							{/* сумма депозита */}
-							{/* <CalculatorInput
+							<CalculatorInput
 								tariffName={tariffName}
 								depositRate={depositRate}
 								minDepositRate={minDepositRate}
 								maxDepositRate={maxDepositRate}
+								title={'Первоначальная сумма накопления'}
 								getSumFormat={this.getSumFormat}
 								handleInputBlur={this.handleInputBlur}
 								handleInputChange={this.handleInputChange}
 								handleChange={this.handleInputRangeChange}
-							/> */}
-							{/* <CalculatorMonthTabs
+							/>
+							<CalculatorMonthTabs
 								deposit={deposit}
 								month={month}
+								title={'Укажите срок накопления'}
 								handleClick={this.handleMonthClick}
-							/> */}
-							{/* <CalculatorBonusInput
+							/>
+							<CalculatorBonusInput
 								transactionRate={transactionRate}
 								bonusPercent={bonusPercent}
 								handleBonusInputChange={this.handleBonusInputChange}
 								handleBonusInputBlur={this.handleBonusInputBlur}
 								handleBonusInputRangeChange={this.handleBonusInputRangeChange}
-							/> */}
+							/>
 						</div>
 						<div className="Calculator__rigth">
 							<CalculatorInfoPanel

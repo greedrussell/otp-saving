@@ -3,8 +3,8 @@
 }
 
 @media (min-width: 768px) {
-  .CalculatorMonthTabs__list {
-    padding-bottom: 26px;
+  .CalculatorMonthTabs {
+    padding-bottom: 32px;
   }
 }
 
@@ -44,6 +44,12 @@
 }
 
 @media (min-width: 768px) {
+  .Tab:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 992px) {
   .Tab {
     margin-bottom: 0;
   }

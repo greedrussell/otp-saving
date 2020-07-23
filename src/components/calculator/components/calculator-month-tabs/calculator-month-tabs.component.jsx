@@ -9,10 +9,10 @@ const Tab = ({ isActive, title, subTitle = '', handleClick }) => (
 	</div>
 )
 
-const CalculatorMonthTabs = ({ deposit, month, handleClick }) => (
+const CalculatorMonthTabs = ({ deposit, month, title, handleClick }) => (
 	<div className="CalculatorMonthTabs">
 		<h3 className="Calculator__sub-title CalculatorMonthTabs__title">
-			Укажите срок вклада
+			{title}
 		</h3>
 		<ul className="CalculatorMonthTabs__list">
 			{deposit.map(item => (
