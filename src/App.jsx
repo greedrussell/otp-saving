@@ -20,7 +20,6 @@ const App = () => {
 			<Calculator />
 			<HowItWork />
 			<CustomerInfo />
-
 			{/* <Faq /> */}
 			{/* <MobileApp /> */}
 			{/* <Footer /> */}
