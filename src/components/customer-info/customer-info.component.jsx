@@ -2,10 +2,8 @@ import React from 'react'
 import { Element, Link } from 'react-scroll'
 
 import './customer-info.css'
-import './customer-info-list.css'
 import CardPNG from '../../assets/img/customer-info.png'
 import PdfSVG from '../../assets/img/pdf.svg'
-import Popup from '../popup/popup.component'
 
 const CustomerInfoList = () => (
 	<ul className="CustomerInfoList">
@@ -17,26 +15,18 @@ const CustomerInfoList = () => (
 			</p>
 		</li>
 		<li className="CustomerInfoList__item">
-			Ежемесячный доход&nbsp;
+			Дополнительно&nbsp;
 			<p className="inline">
-				на остаток —&nbsp;
-				<span className="CustomerInfoList__item__green">4%</span>
+				до&nbsp;
+				<span className="CustomerInfoList__item__green">2,5%&nbsp;</span>
 			</p>
+			годовых&nbsp;
+			<p className="inline">к ставке</p>
+			<p className="inline">по накопительному счету</p>
 		</li>
 		<li className="CustomerInfoList__item">
-			Плюс&nbsp;
-			<span className="CustomerInfoList__item__green">0,25%&nbsp;</span>к ставке
-			вклада при тратах&nbsp;
-			<p className="inline">7 000 ₽ в месяц по карте </p>
-			<br />
-			Плюс&nbsp;
-			<span className="CustomerInfoList__item__green">0,5%&nbsp;</span>к ставке
-			вклада при тратах&nbsp;
-			<p className="inline">15 000 ₽ в месяц по карте</p>
-		</li>
-		<li className="CustomerInfoList__item">
-			Снятие наличных в банкоматах любых банков&nbsp;
-			<p className="inline">без комиссии — до 30 000 ₽&nbsp;</p>
+			Снятие наличных&nbsp; <p className="inline">в банкоматах</p> любых банков
+			без комиссии —&nbsp;<p className="inline">до 30 000 ₽</p>
 		</li>
 	</ul>
 )
@@ -75,10 +65,15 @@ class CustomerInfo extends React.Component {
 			<Element name="CustomerInfo">
 				<section className="CustomerInfo">
 					<div className="container">
-						<h2 className="title-h2 CustomerInfo__title">Уже есть вклад?</h2>
+						<h2 className="title-h2 CustomerInfo__title">
+							Бесплатная карта&nbsp;
+							<span className="inline">с доставкой на дом</span>
+						</h2>
 						<p className="CustomerInfo__text">
-							Прекрасно. Просто закажите карту «ОТП Покупки» на дом и получайте
-							повышенную ставку уже сейчас.
+							Закажите карту «ОТП Покупки» онлайн&nbsp;
+							<span className="inline">
+								и получайте повышенную ставку уже сейчас
+							</span>
 						</p>
 						<div className="CustomerInfo__main">
 							<div className="CustomerInfo__img-block">
@@ -109,10 +104,10 @@ class CustomerInfo extends React.Component {
 						</div>
 					</div>
 				</section>
-				<Popup
+				{/* <Popup
 					isActive={this.state.isActive}
 					handleCloseClick={this.handleCloseClick}
-				/>
+				/> */}
 			</Element>
 		)
 	}
