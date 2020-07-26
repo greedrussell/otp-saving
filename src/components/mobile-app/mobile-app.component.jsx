@@ -1,33 +1,42 @@
 import React from 'react'
+
 import './mobile-app.css'
+import AppleSVG from '../../assets/img/mobile-app__apple-btn.svg'
+import GoogleSVG from '../../assets/img/mobile-app__google-btn.svg'
+import OtpSVG from '../../assets/img/mobile-app__otp.svg'
 
 const MobileApp = () => (
 	<section className="MobileApp">
 		<div className="container">
-			<img src="" alt="" className="MobileApp__img" />
-			<h2 className="title-h2 MobileApp__title">
-				Мобильное приложение ОТП Банк
-			</h2>
-			<div className="MobileApp__text">
-				Открывайте вклады и накопительные счета прямо в приложении
-			</div>
-			<div className="MobileApp__text">
-				Оплачивайте телефон, ЖКХ и другие услуги
-			</div>
-			<div className="MobileApp__text">
-				Бесплатное пополняйте счёт с карт других банков
-			</div>
-			<div className="MobileApp__app-block">
-				<img
-					src=""
-					alt="App store image"
-					className="MobileApp__app-block__img"
-				/>
-				<img
-					src=""
-					alt="Google play image"
-					className="MobileApp__app-block__img"
-				/>
+			<div className="MobileApp__wrapper">
+				<div className="MobileApp__inner">
+					<img src={OtpSVG} alt="" className="MobileApp__img" />
+					<h2 className="title-h2 MobileApp__title">
+						Мобильное приложение&nbsp;
+						<span className="MobileApp__title__inline">ОТП Банк</span>
+					</h2>
+					<div className="MobileApp__text">
+						Открывайте вклады и накопительные счета прямо в приложении
+					</div>
+					<div className="MobileApp__text">
+						Оплачивайте телефон, ЖКХ и другие услуги
+					</div>
+					<div className="MobileApp__text">
+						Бесплатное пополняйте счёт с карт других банков
+					</div>
+					<div className="MobileApp__app-block">
+						<img
+							src={AppleSVG}
+							alt="App store приложение"
+							className="MobileApp__app-block__img"
+						/>
+						<img
+							src={GoogleSVG}
+							alt="Google play приложение"
+							className="MobileApp__app-block__img"
+						/>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

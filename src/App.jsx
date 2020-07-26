@@ -9,7 +9,7 @@ import Calculator from './components/calculator/calculator.component'
 import HowItWork from './components/how-it-work/how-it-work.component'
 import CustomerInfo from './components/customer-info/customer-info.component'
 import Faq from './components/faq/faq.component'
-// import MobileApp from './components/mobile-app/mobile-app.component'
+import MobileApp from './components/mobile-app/mobile-app.component'
 
 const App = () => {
 	return (
@@ -21,7 +21,7 @@ const App = () => {
 			<HowItWork />
 			<CustomerInfo />
 			<Faq />
-			{/* <MobileApp /> */}
+			<MobileApp />
 			{/* <Footer /> */}
 		</>
 	)
