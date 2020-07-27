@@ -59,10 +59,7 @@ const HeroImgNav = ({ isScroll }) => (
 						</a>
 					</li>
 					<li className="HeroImg__nav__item">
-						<a
-							className="HeroImg__nav__item__link"
-							href="/#"
-							className="btn btn--green btn--small">
+						<a href="/#" className="btn btn--green btn--small">
 							Открыть счет
 						</a>
 					</li>
