@@ -2,7 +2,7 @@ import React from 'react'
 
 import './about-action.css'
 import CardSVG from '../../assets/img/about-action__card.svg'
-import BasketSVG from '../../assets/img/about-action__basket.svg'
+import BoxSVG from '../../assets/img/about-action__box.svg'
 import PercentSVG from '../../assets/img/about-action__percent.svg'
 import OnePNG from '../../assets/img/about-action__one.png'
 import TwoPNG from '../../assets/img/about-action__two.png'
@@ -46,7 +46,7 @@ const AboutAction = () => (
 					text={
 						'по карте и получайте бонус: дополнительно до 2,5% годовых к ставке по накопительному счету'
 					}
-					imgUrl={BasketSVG}
+					imgUrl={PercentSVG}
 					numberImgUrl={TwoPNG}
 					index={1}>
 					<h3 className="title-h3 AboutActionItem__title">
@@ -58,7 +58,7 @@ const AboutAction = () => (
 					text={
 						'Станьте одним из 100 обладателей денежных призов с помощью ваших обычных покупок по карте'
 					}
-					imgUrl={PercentSVG}
+					imgUrl={BoxSVG}
 					numberImgUrl={ThreePNG}
 					index={2}>
 					<h3 className="title-h3 AboutActionItem__title">

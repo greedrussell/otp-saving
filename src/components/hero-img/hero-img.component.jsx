@@ -33,19 +33,17 @@ const HeroImgNav = ({ isScroll }) => (
 		<div className="container">
 			<div className="HeroImg__nav__wrapper">
 				<a href="/#" className="HeroImg__nav__link">
-					{isScroll ? (
-						<img
-							src={LogoScrollSVG}
-							alt="OTP bank logo"
-							className="HeroImg__nav__link__img"
-						/>
-					) : (
-						<img
-							src={LogoSVG}
-							alt="OTP bank logo"
-							className="HeroImg__nav__link__img"
-						/>
-					)}
+					<img
+						src={LogoSVG}
+						alt="OTP bank logo"
+						className="HeroImg__nav__link__img"
+					/>
+
+					<img
+						src={LogoScrollSVG}
+						alt="OTP bank logo"
+						className="HeroImg__nav__link__img HeroImg__nav__link__img--scroll"
+					/>
 				</a>
 				<ul className="HeroImg__nav__list">
 					<li className="HeroImg__nav__item">

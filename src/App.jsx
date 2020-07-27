@@ -16,14 +16,13 @@ const App = () => {
 		<>
 			<HeroImg />
 			<ActionInfo />
-
 			<AboutAction />
-			<Calculator />
-			<HowItWork />
-			<CustomerInfo />
-			<Faq />
-			<MobileApp />
-			<Footer />
+			{/* <Calculator /> */}
+			{/* <HowItWork /> */}
+			{/* <CustomerInfo /> */}
+			{/* <Faq /> */}
+			{/* <MobileApp /> */}
+			{/* <Footer /> */}
 		</>
 	)
 }

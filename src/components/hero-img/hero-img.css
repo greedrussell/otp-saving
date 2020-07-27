@@ -243,3 +243,37 @@
 .HeroImg__nav__item:last-child .HeroImg__nav__item__link {
   margin-right: 0;
 }
+
+.HeroImg__nav__link {
+  position: relative;
+  height: 30px;
+  width: 168px;
+}
+
+.HeroImg__nav__link__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.HeroImg__nav__link__img--scroll {
+  opacity: 0;
+}
+
+@media (min-width: 768px) {
+  .HeroImg__nav.scroll .HeroImg__nav__link__img {
+    opacity: 0;
+  }
+
+  .HeroImg__nav.scroll .HeroImg__nav__link__img--scroll {
+    opacity: 1;
+  }
+
+  .HeroImg__nav .HeroImg__nav__link__img {
+    opacity: 1;
+  }
+
+  .HeroImg__nav .HeroImg__nav__link__img--scroll {
+    opacity: 0;
+  }
+}
