@@ -34,11 +34,6 @@ const FAQ_LIST = [
 const FaqItem = ({ title, text, id, hadnleClick, activeId }) => {
 	return (
 		<div className="FaqItem" data-id={id} onClick={hadnleClick}>
-			{activeId === id ? (
-				<img src={ArrowSVG} alt="" className="FaqItem__img active" />
-			) : (
-				<img src={ArrowSVG} alt="" className="FaqItem__img" />
-			)}
 			<div
 				className={
 					activeId === id ? 'FaqItem__content active' : 'FaqItem__content'
@@ -46,6 +41,11 @@ const FaqItem = ({ title, text, id, hadnleClick, activeId }) => {
 				<h3 className="FaqItem__title">{title}</h3>
 				<p className="FaqItem__text">{text}</p>
 			</div>
+			{activeId === id ? (
+				<img src={ArrowSVG} alt="" className="FaqItem__img active" />
+			) : (
+				<img src={ArrowSVG} alt="" className="FaqItem__img" />
+			)}
 		</div>
 	)
 }

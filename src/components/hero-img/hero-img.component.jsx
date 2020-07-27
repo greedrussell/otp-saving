@@ -84,14 +84,16 @@ class HeroImg extends React.Component {
 	handleScroll = event => {
 		const offsetTop = window.pageYOffset
 
-		if (offsetTop === 0) {
-			this.setState({
-				isScroll: false,
-			})
-		} else {
-			this.setState({
-				isScroll: true,
-			})
+		if (window.innerWidth >= 768) {
+			if (offsetTop === 0) {
+				this.setState({
+					isScroll: false,
+				})
+			} else {
+				this.setState({
+					isScroll: true,
+				})
+			}
 		}
 	}
 
@@ -118,7 +120,11 @@ class HeroImg extends React.Component {
 							</span>
 						</h1>
 						<HeroImgPluses />
-						<Link to="Form" smooth={true} duration={500}>
+						<Link
+							to="Form"
+							smooth={true}
+							duration={500}
+							className="HeroImg__btn-link">
 							<button className="HeroImg__btn btn btn--orange">
 								Открыть счёт
 							</button>

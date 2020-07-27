@@ -127,7 +127,6 @@ input:active {
 
 @media (min-width: 1600px) {
   .btn {
-    height: 64px;
     font-size: 20px;
     line-height: 28px;
   }
