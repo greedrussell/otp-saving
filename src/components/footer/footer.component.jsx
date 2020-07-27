@@ -1,7 +1,13 @@
-import React from '../customer-info/node_modules/react'
+import React from 'react'
 
 import './footer.css'
 import LogoSVG from '../../assets/img/footer__logo.svg'
+import FbSVG from '../../assets/img/footer__fb.svg'
+import VkSVG from '../../assets/img/footer__vk.svg'
+import InSVG from '../../assets/img/footer__in.svg'
+import OkSVG from '../../assets/img/footer__ok.svg'
+import AppleSVG from '../../assets/img/footer__mobile-app--apple.svg'
+import GoogleSVG from '../../assets/img/footer__mobile-app--google.svg'
 
 const MENU__LIST = [
 	{
@@ -38,6 +44,31 @@ const Menu = ({ menu }) => (
 	</ul>
 )
 
+const SocialNetwork = () => (
+	<ul className="SocialNetwork__list">
+		<li className="SocialNetwork__item">
+			<a href="/#" className="SocialNetwork__item__link">
+				<img src={FbSVG} alt="" className="SocialNetwork__item__link__img" />
+			</a>
+		</li>
+		<li className="SocialNetwork__item">
+			<a href="/#" className="SocialNetwork__item__link">
+				<img src={VkSVG} alt="" className="SocialNetwork__item__link__img" />
+			</a>
+		</li>
+		<li className="SocialNetwork__item">
+			<a href="/#" className="SocialNetwork__item__link">
+				<img src={InSVG} alt="" className="SocialNetwork__item__link__img" />
+			</a>
+		</li>
+		<li className="SocialNetwork__item">
+			<a href="/#" className="SocialNetwork__item__link">
+				<img src={OkSVG} alt="" className="SocialNetwork__item__link__img" />
+			</a>
+		</li>
+	</ul>
+)
+
 const Contact = () => (
 	<div className="Contact">
 		<p className="Contact__title">Свяжитесь с нами</p>
@@ -50,12 +81,30 @@ const Contact = () => (
 	</div>
 )
 
+const MobileApp = () => (
+	<div className="Footer__middle__mobile-app">
+		<h3 className="Footer__middle__mobile-app__title">Мобильный банк</h3>
+		<div className="Footer__middle__mobile-app__block">
+			<img className="Footer__middle__mobile-app__img" src={AppleSVG} alt="" />
+			<img className="Footer__middle__mobile-app__img" src={GoogleSVG} alt="" />
+		</div>
+	</div>
+)
+
 const Footer = () => (
 	<footer className="Footer">
-		<div className="Footer__top">
-			<div className="container">
+		<div className="container">
+			<div className="Footer__top">
 				<Menu menu={MENU__LIST} />
-				<Contact />
+			</div>
+			<div className="Footer__middle">
+				<div className="Footer__middle__left">
+					<Contact />
+					<SocialNetwork />
+				</div>
+				<div className="Footer__middle__rigth">
+					<MobileApp />
+				</div>
 			</div>
 		</div>
 		<div className="Footer__bottom">

@@ -111,6 +111,7 @@
 .Contact {
   display: flex;
   flex-direction: column;
+  margin-bottom: 16px;
 }
 
 .Contact__title {
@@ -130,4 +131,72 @@
   line-height: 32px;
   margin-bottom: 4px;
   align-self: baseline;
+}
+
+.Contact__link:last-child {
+  margin-bottom: 0;
+}
+
+.Footer__middle {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .Footer__middle {
+    flex-direction: row;
+    margin-bottom: 30px;
+  }
+}
+
+.Footer__middle__left {
+  margin-bottom: 52px;
+}
+
+@media (min-width: 768px) {
+  .Footer__middle__left {
+    margin-bottom: 0;
+  }
+}
+
+.Footer__middle__mobile-app {
+
+}
+
+.Footer__middle__mobile-app__title {
+  font-family: 'SourceSansProBold', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 32px;
+  margin-bottom: 16px;
+}
+
+.Footer__middle__mobile-app__img {
+  height: 50px;
+  width: 167px;
+}
+
+.Footer__middle__mobile-app__block img:first-child {
+  margin-right: 8px;
+}
+
+.SocialNetwork__list {
+  display: flex;
+  margin: 0 -4px;
+}
+
+.SocialNetwork__item__link {
+  display: flex;
+  padding-right: 10px;
+  width: 22px;
+  height: 22px;
+  align-items: center;
+  justify-content: center;
+}
+
+.SocialNetwork__item__link__img {
+  width: 20px;
+  height: 20px;
 }
