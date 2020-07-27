@@ -17,9 +17,11 @@ const App = () => {
 			<HeroImg />
 			<ActionInfo />
 			<AboutAction />
+
 			<Calculator />
 			<HowItWork />
 			<CustomerInfo />
+
 			<Faq />
 			<MobileApp />
 			<Footer />
