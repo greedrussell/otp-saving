@@ -19,7 +19,8 @@ const App = () => {
 			<AboutAction />
 			<Calculator />
 			<HowItWork />
-			{/* <CustomerInfo /> */}
+			<CustomerInfo />
+
 			{/* <Faq /> */}
 			{/* <MobileApp /> */}
 			{/* <Footer /> */}

@@ -98,7 +98,7 @@ class CustomerInfo extends React.Component {
 								<a
 									href="https://www.otpbank.ru/f/documents/cards/debet-cards/pravila-cash-deposit.pdf"
 									className="CustomerInfo__footer__block__text">
-									Полные условия по карте
+									Тарифы по карте
 								</a>
 							</div>
 						</div>
