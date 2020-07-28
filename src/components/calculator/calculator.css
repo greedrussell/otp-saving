@@ -1,5 +1,22 @@
 .Calculator {
-  padding: 40px 0;
+  padding: 30px 0;
+}
+
+@media (min-width: 768px) {
+  .Calculator {
+    padding: 40px 0 22px;
+  }
+
+}
+@media (min-width: 1200px) {
+  .Calculator {
+    padding: 60px 0 42px;
+  }
+}
+@media (min-width: 1600px) {
+  .Calculator {
+    padding: 80px 0 62px;
+  }
 }
 
 .Calculator__title {

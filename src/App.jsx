@@ -17,8 +17,8 @@ const App = () => {
 			<HeroImg />
 			<ActionInfo />
 			<AboutAction />
-			{/* <Calculator /> */}
-			{/* <HowItWork /> */}
+			<Calculator />
+			<HowItWork />
 			{/* <CustomerInfo /> */}
 			{/* <Faq /> */}
 			{/* <MobileApp /> */}

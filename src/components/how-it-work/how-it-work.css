@@ -1,9 +1,27 @@
 .HowItWork {
-  padding: 60px 0;
+  padding: 30px 0;
+}
+
+@media (min-width: 768px) {
+  .HowItWork {
+    padding: 40px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .HowItWork {
+    padding: 60px 0;
+  }
+}
+
+@media (min-width: 1600px) {
+  .HowItWork {
+    padding: 80px 0;
+  }
 }
 
 .HowItWork__top {
-  margin-bottom: 32px;
+  margin-bottom: 35px;
 }
 
 @media (min-width: 768px) {
@@ -68,7 +86,7 @@
   line-height: 24px;
   color: #494949;
   border-bottom: 2px solid rgba(226, 230, 240, 0.7);
-  margin-top: 66px;
+  margin-top: 56px;
 }
 
 .HowItWork__middle__img-block__img {
@@ -87,11 +105,8 @@
 
 @media (min-width: 1024px) {
   .HowItWork__middle__img-block {
-    flex: 0 0 708px;
+    flex: 0 0 608px;
     box-sizing: border-box;
-    /* display: flex;
-    justify-content: flex-end; */
-    /* max-width: 668px; */
     padding-left: 40px;
   }
 
