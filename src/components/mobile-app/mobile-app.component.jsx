@@ -15,15 +15,15 @@ const MobileApp = () => (
 						Мобильное приложение&nbsp;
 						<span className="MobileApp__title__inline">ОТП Банк</span>
 					</h2>
-					<div className="MobileApp__text">
+					<p className="MobileApp__text">
 						Открывайте вклады и накопительные счета прямо в приложении
-					</div>
-					<div className="MobileApp__text">
+					</p>
+					<p className="MobileApp__text">
 						Оплачивайте телефон, ЖКХ и другие услуги
-					</div>
-					<div className="MobileApp__text">
+					</p>
+					<p className="MobileApp__text">
 						Бесплатное пополняйте счёт с карт других банков
-					</div>
+					</p>
 					<div className="MobileApp__app-block">
 						<img
 							src={AppleSVG}

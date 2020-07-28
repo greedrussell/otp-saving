@@ -1,12 +1,27 @@
 .MobileApp {
   background:  url(../../assets/img/mobile-app__bg--mobile.png) no-repeat 50% #607D8B;
   background-size: cover;
+  padding: 43px 0;
 }
 
 @media (min-width: 768px) {
   .MobileApp {
     background: #607D8B url(../../assets/img/mobile-app__bg.png);
+    background-position: 50% 0;
     background-size: cover;
+    padding: 70px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .MobileApp {
+    padding: 78px 0;
+  }
+}
+
+@media (min-width: 1600px) {
+  .MobileApp {
+    padding: 118px 0;
   }
 }
 
@@ -15,22 +30,9 @@
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
-  height: 528px;
 }
 
 @media (min-width: 768px) {
-  .MobileApp__wrapper {
-    height: 602px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .MobileApp__wrapper {
-    height: 682px;
-  }
-}
-
-@media (min-width: 1200px) {
   .MobileApp__wrapper {
     align-items: flex-end;
   }
@@ -38,8 +40,9 @@
 
 .MobileApp__inner {
   width: 100%;
-  max-width: 50%;
+  max-width: 48%;
   min-width: 343px;
+  max-width: 480px;
 }
 
 .MobileApp__img {
@@ -58,10 +61,17 @@
 .MobileApp__title {
   margin-bottom: 12px;
   color: #fff;
+  max-width: 280px;
+}
+
+@media (min-width: 768px) {
+  .MobileApp__title {
+    max-width: unset;
+  }
 }
 
 .MobileApp__title__inline {
-  display: inline-block;
+  display: block;
 }
 
 .MobileApp__text {
@@ -78,7 +88,7 @@
 }
 
 .MobileApp__app-block {
-  margin-top: 24px;
+  margin-top: 28px;
 }
 
 .MobileApp__app-block__img {

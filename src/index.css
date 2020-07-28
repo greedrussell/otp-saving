@@ -57,6 +57,10 @@ input:active {
   outline: none;
 }
 
+img {
+  vertical-align: bottom;
+}
+
 .container {
   max-width: 1150px;
   padding: 0 16px;
