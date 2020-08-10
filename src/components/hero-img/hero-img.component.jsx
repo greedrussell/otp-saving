@@ -109,7 +109,7 @@ class HeroImg extends React.Component {
 				<div className="container">
 					<div className="HeroImg__wrapper">
 						<h1 className="HeroImg__title">
-							Повышаем процент&nbsp;
+							123Повышаем процент&nbsp;
 							<span className="HeroImg__title__inline">
 								по накопительному счёту
 							</span>
