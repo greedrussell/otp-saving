@@ -8,6 +8,7 @@ import AboutAction from './components/about-action/about-action.components'
 import Calculator from './components/calculator/calculator.component'
 import HowItWork from './components/how-it-work/how-it-work.component'
 import CustomerInfo from './components/customer-info/customer-info.component'
+import OldForm from './components/old-form/old-form.component'
 import Faq from './components/faq/faq.component'
 import MobileApp from './components/mobile-app/mobile-app.component'
 
@@ -20,6 +21,7 @@ const App = () => {
 			<Calculator />
 			<HowItWork />
 			<CustomerInfo />
+			<OldForm />
 			<Faq />
 			<MobileApp />
 			<Footer />

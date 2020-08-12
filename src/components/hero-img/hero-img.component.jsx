@@ -57,9 +57,11 @@ const HeroImgNav = ({ isScroll }) => (
 						</a>
 					</li>
 					<li className="HeroImg__nav__item">
-						<a href="/#" className="btn btn--green btn--small">
-							Открыть счет
-						</a>
+						<Link to="Form" smooth={true} duration={500}>
+							<button className="btn btn--green btn--small">
+								Открыть счёт
+							</button>
+						</Link>
 					</li>
 				</ul>
 			</div>

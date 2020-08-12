@@ -4,61 +4,50 @@
   background-size: cover;
   background-position: 50%;
   padding: 26px 0 40px;
-  min-height: 686px;
   box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
   .HeroImg {
-    padding: 160px 0 60px;
-    max-height: 860px;
-    min-height: auto;
+    padding: 0;
   }
 }
 
 @media (min-width: 1024px) {
   .HeroImg {
     background-image: url('../../assets/img/hero-img__banner.png');
-    
-  }
-}
-
-@media (min-width: 1200px) {
-  .HeroImg {
-    padding: 140px 0 70px;
-  }
-}
-
-@media (min-width: 1600px) {
-  .HeroImg {
-    padding: 205px 0 98px;
   }
 }
 
 .HeroImg__wrapper {
-  height: 556px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
-  max-width: 480px;
+  min-height: calc(686px - 136px);
 }
 
 @media (min-width: 768px) {
   .HeroImg__wrapper {
-    height: auto;
+    max-width: 800px;
+    padding: 160px 0 60px;
+    min-height: auto;
+    height: 100vh;
+    max-height: 860px;
+    box-sizing: border-box;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
   .HeroImg__wrapper {
-    max-width: 800px;
+    padding: 140px 0 70px;
   }
 }
 
 @media (min-width: 1600px) {
   .HeroImg__wrapper {
     max-width: 900px;
+    padding: 205px 0 98px;
   }
 }
 
@@ -70,7 +59,7 @@
   font-size: 40px;
   line-height: 48px;
   letter-spacing: -0.02em;
-  
+  max-width: 480px;
 }
 
 @media (min-width: 768px) {
@@ -78,6 +67,7 @@
     font-size: 48px;
     line-height: 56px;
     letter-spacing: 0;
+    max-width: 100%;
   }
 }
 
@@ -107,6 +97,8 @@
   margin-bottom: 32px;
   position: relative;
   padding-left: 58px;
+  max-width: 520px;
+  box-sizing: border-box;
 }
 
 @media (min-width: 1600px) {
@@ -168,7 +160,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding-bottom: 30px;
+  padding-bottom: 40px;
   z-index: 100;
   transition: 0.4s;
 }
@@ -275,5 +267,15 @@
 
   .HeroImg__nav .HeroImg__nav__link__img--scroll {
     opacity: 0;
+  }
+}
+
+.HeroImg__btn-link {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .HeroImg__btn-link {
+    display: none;
   }
 }

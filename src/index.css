@@ -140,9 +140,7 @@ img {
   background-color: #52AE30;
 }
 
-.btn--green:hover,
-.btn--green:active,
-.btn--green:focus {
+.btn--green:hover {
   background-color: #6ECD4A;
 }
 
@@ -150,9 +148,7 @@ img {
   background-color: #FF6600;
 }
 
-.btn--orange:hover,
-.btn--orange:active,
-.btn--orange:focus {
+.btn--orange:hover {
   background-color: #FF802B;
 }
 
@@ -161,9 +157,7 @@ img {
   border: 2px solid #fff;
 }
 
-.btn--opacity:hover,
-.btn--opacity:active,
-.btn--opacity:focus {
+.btn--opacity:hover {
   border: 2px solid #FF802B;
   background: #FF802B;
 }

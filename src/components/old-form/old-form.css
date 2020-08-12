@@ -1,0 +1,23 @@
+.claim-form {
+  height: 1060px;
+  width: 100%;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .claim-form {
+    height: 900px;
+  }
+}
+
+.Form {
+  position: relative;
+  overflow: hidden;
+  padding-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .Form {
+    padding-top: 120px;
+  }
+}
