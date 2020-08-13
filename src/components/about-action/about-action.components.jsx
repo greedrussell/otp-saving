@@ -8,7 +8,13 @@ import OnePNG from '../../assets/img/about-action__one.png'
 import TwoPNG from '../../assets/img/about-action__two.png'
 import ThreePNG from '../../assets/img/about-action__three.png'
 
-const AboutActionItem = ({ text, imgUrl, children, numberImgUrl, index }) => (
+const AboutActionItem = ({
+	textComponent,
+	imgUrl,
+	children,
+	numberImgUrl,
+	index,
+}) => (
 	<div className="AboutActionItem">
 		<div className="AboutActionItem__wrapper">
 			<img src={imgUrl} alt="" className="AboutActionItem__img" />
@@ -17,7 +23,7 @@ const AboutActionItem = ({ text, imgUrl, children, numberImgUrl, index }) => (
 				<img src={numberImgUrl} alt="" className="AboutActionItem__bg__img" />
 			</div>
 		</div>
-		<p className="AboutActionItem__text">{text}</p>
+		{textComponent}
 	</div>
 )
 
@@ -29,8 +35,14 @@ const AboutAction = () => (
 			</h2>
 			<div className="AboutAction__list">
 				<AboutActionItem
-					text={
-						'и получите карту «ОТП Покупки». Карту можно оформить в отделении банка или заказать доставку'
+					textComponent={
+						<p className="AboutActionItem__text">
+							и получите{' '}
+							<span className="AboutActionItem__text-green">
+								карту «ОТП Покупки»
+							</span>
+							. Карту можно оформить в отделении банка
+						</p>
 					}
 					imgUrl={CardSVG}
 					numberImgUrl={OnePNG}
@@ -43,8 +55,11 @@ const AboutAction = () => (
 					</h3>
 				</AboutActionItem>
 				<AboutActionItem
-					text={
-						'по карте и получайте бонус: дополнительно до 2,5% годовых к ставке по накопительному счету'
+					textComponent={
+						<p className="AboutActionItem__text">
+							по карте и получайте бонус: дополнительно до 2,5% годовых к ставке
+							по накопительному счету
+						</p>
 					}
 					imgUrl={PercentSVG}
 					numberImgUrl={TwoPNG}
@@ -55,8 +70,11 @@ const AboutAction = () => (
 					</h3>
 				</AboutActionItem>
 				<AboutActionItem
-					text={
-						'Станьте одним из 100 обладателей денежных призов с помощью ваших обычных покупок по карте'
+					textComponent={
+						<p className="AboutActionItem__text">
+							Станьте одним из 100 обладателей денежных призов с помощью ваших
+							обычных покупок по карте
+						</p>
 					}
 					imgUrl={BoxSVG}
 					numberImgUrl={ThreePNG}

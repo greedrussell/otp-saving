@@ -138,8 +138,14 @@ class Calculator extends React.Component {
 	getBonusPercent = transactionRate => {
 		let bonusPercent = 0
 
-		if (transactionRate >= 15000) {
-			bonusPercent = 0.5
+		if (transactionRate >= 70000) {
+			bonusPercent = 2.5
+		} else if (transactionRate >= 50000) {
+			bonusPercent = 2
+		} else if (transactionRate >= 30000) {
+			bonusPercent = 1.5
+		} else if (transactionRate >= 15000) {
+			bonusPercent = 1
 		} else if (transactionRate >= 7000) {
 			bonusPercent = 0.2
 		} else {

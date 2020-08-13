@@ -8,9 +8,8 @@ import PdfSVG from '../../assets/img/pdf.svg'
 const CustomerInfoList = () => (
 	<ul className="CustomerInfoList">
 		<li className="CustomerInfoList__item">
-			Выпуск и обслуживание&nbsp;
+			Обслуживание карты при выполнении условий -&nbsp;
 			<p className="inline">
-				карты —&nbsp;
 				<span className="CustomerInfoList__item__green">0 ₽</span>
 			</p>
 		</li>
@@ -21,7 +20,7 @@ const CustomerInfoList = () => (
 				<span className="CustomerInfoList__item__green">2,5%&nbsp;</span>
 			</p>
 			годовых&nbsp;
-			<p className="inline">к ставке</p>
+			<p className="inline">к ставке&nbsp;</p>
 			<p className="inline">по накопительному счету</p>
 		</li>
 		<li className="CustomerInfoList__item">
@@ -66,11 +65,10 @@ class CustomerInfo extends React.Component {
 				<section className="CustomerInfo">
 					<div className="container">
 						<h2 className="title-h2 CustomerInfo__title">
-							Бесплатная карта&nbsp;
-							<span className="inline">с доставкой на дом</span>
+							Бесплатная дебетовая карта
 						</h2>
 						<p className="CustomerInfo__text">
-							Закажите карту «ОТП Покупки» онлайн&nbsp;
+							Закажите карту «ОТП Покупки» (к накопительному счету)»&nbsp;
 							<span className="inline">
 								и получайте повышенную ставку уже сейчас
 							</span>

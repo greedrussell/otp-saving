@@ -22,7 +22,7 @@ const MobileApp = () => (
 						Оплачивайте телефон, ЖКХ и другие услуги
 					</p>
 					<p className="MobileApp__text">
-						Бесплатное пополняйте счёт с карт других банков
+						Бесплатно пополняйте счёт с карт других банков
 					</p>
 					<div className="MobileApp__app-block">
 						<img

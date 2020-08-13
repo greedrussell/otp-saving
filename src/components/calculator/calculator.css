@@ -68,7 +68,7 @@
 
 @media (min-width: 768px) {
   .Calculator__left {
-    min-width: 340px;
+    min-width: 290px;
   }
 }
 
@@ -85,8 +85,8 @@
 
 @media (min-width: 768px) {
   .Calculator__rigth {
-    min-width: 340px;
-    max-width: 450px;
+    min-width: 390px;
+    max-width: 560px;
     padding-left: 20px;
     margin-top: 0;
     box-sizing: border-box;
@@ -95,6 +95,7 @@
 
 @media (min-width: 992px) {
   .Calculator__rigth {
+    min-width: 480px;
     padding-left: 110px;
     margin-top: 48px;
   }

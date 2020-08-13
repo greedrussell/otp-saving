@@ -108,27 +108,22 @@
   color: #000;
 }
 
+.AboutActionItem__text-green {
+  color: #428B26;
+  font-family: 'SourceSansProBold', sans-serif;
+  font-weight: bold;
+}
+
 .AboutActionItem__bg {
   position: absolute;
   bottom: 10px;
+  left: 70px;
 }
 
-@media (min-width: 768px) {
+@media(min-width: 768px) {
   .AboutActionItem__bg {
-    bottom: 42px;
+    left: 90px;
   }
-}
-
-.AboutActionItem__bg--0 {
-  left: 46px;
-}
-
-.AboutActionItem__bg--1 {
-  left: 56px;
-}
-
-.AboutActionItem__bg--2 {
-  left: 50px;
 }
 
 .AboutActionItem__bg__img {

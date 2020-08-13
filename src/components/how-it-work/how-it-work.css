@@ -179,7 +179,8 @@
 }
 
 .HowItWork__bottom__pdf-block__text {
-  font-family: 'SourceSansPro', sans-serif;
+  font-family: 'SourceSansProBold', sans-serif;
+  font-weight: bold;
   font-size: 16px;
   line-height: 24px;
 }

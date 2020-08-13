@@ -273,9 +273,3 @@
 .HeroImg__btn-link {
   width: 100%;
 }
-
-@media (min-width: 768px) {
-  .HeroImg__btn-link {
-    display: none;
-  }
-}
