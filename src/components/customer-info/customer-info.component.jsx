@@ -87,7 +87,7 @@ class CustomerInfo extends React.Component {
 							<Link to="Form" smooth={true} duration={500}>
 								<button className="btn btn--green">Заказать карту</button>
 							</Link>
-							<div className="CustomerInfo__footer__block">
+							{/* <div className="CustomerInfo__footer__block">
 								<img
 									className="CustomerInfo__footer__block__img"
 									src={PdfSVG}
@@ -98,7 +98,7 @@ class CustomerInfo extends React.Component {
 									className="CustomerInfo__footer__block__text">
 									Тарифы по карте
 								</a>
-							</div>
+							</div> */}
 						</div>
 					</div>
 				</section>

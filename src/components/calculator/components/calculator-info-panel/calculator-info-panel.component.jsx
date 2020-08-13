@@ -28,7 +28,7 @@ const CalculatorInfoPanel = ({ date, totalPercent, bonusSum, finalSum }) => {
 			</ul>
 			<Link to="Form" smooth={true} duration={500}>
 				<button className="btn btn--green CalculatorInfoPanel__btn">
-					Открыть вклад
+					Открыть счет
 				</button>
 			</Link>
 		</div>

@@ -53,7 +53,7 @@ const InfoBlock = () => (
 				</p>
 			</div>
 		</div>
-		<div className="InfoBlock__pdf-block">
+		{/* <div className="InfoBlock__pdf-block">
 			<img
 				className="InfoBlock__pdf-block__img"
 				src={PdfSVG}
@@ -62,7 +62,7 @@ const InfoBlock = () => (
 			<a href="/#" className="InfoBlock__pdf-block__text">
 				Правила акции
 			</a>
-		</div>
+		</div> */}
 	</div>
 )
 
@@ -100,13 +100,13 @@ class ActionInfo extends React.Component {
 								handleClick={this.handleClick}
 							/>
 						</div>
-						<div className="ActionInfo__right">
+						{/* <div className="ActionInfo__right">
 							<img
 								className="ActionInfo__right__img"
 								src={GirlPNG}
 								alt="Изображение девочки"
 							/>
-						</div>
+						</div> */}
 					</div>
 				</div>
 			</section>

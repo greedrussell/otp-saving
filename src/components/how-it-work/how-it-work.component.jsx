@@ -54,7 +54,7 @@ const HowItWork = () => (
 						4%
 					</span>
 				</p>
-				<a href="#/" className="HowItWork__bottom__pdf-block">
+				{/* <a href="#/" className="HowItWork__bottom__pdf-block">
 					<img
 						className="HowItWork__bottom__pdf-block__img"
 						src={PdfSVG}
@@ -63,7 +63,7 @@ const HowItWork = () => (
 					<p className="HowItWork__bottom__pdf-block__text">
 						Правила по накопительному счету
 					</p>
-				</a>
+				</a> */}
 			</div>
 		</div>
 	</section>

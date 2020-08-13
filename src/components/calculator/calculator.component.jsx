@@ -1,4 +1,5 @@
 import React from 'react'
+import { Element } from 'react-scroll'
 
 import './calculator.css'
 import CalculatorInfoPanel from './components/calculator-info-panel/calculator-info-panel.component'
@@ -18,33 +19,33 @@ class Calculator extends React.Component {
 				{
 					id: 1,
 					month: 3,
-					percent: 3.9,
+					percent: 4,
 					title: '3 месяца',
-					subTitle: '3.9% годовых',
+					subTitle: '4% годовых',
 				},
 				{
 					id: 2,
 					month: 6,
-					percent: 4.4,
+					percent: 4,
 					title: '6 месяцев',
-					subTitle: '4,4% годовых',
+					subTitle: '4% годовых',
 				},
 				{
 					id: 3,
 					month: 12,
-					percent: 4.1,
+					percent: 4,
 					title: '1 год',
-					subTitle: '4,1% годовых',
+					subTitle: '4% годовых',
 				},
 			],
-			minDepositRate: 15000,
-			maxDepositRate: 10000000,
+			minDepositRate: 1000,
+			maxDepositRate: 350000,
 			// для подсчета дохода
 			month: 3,
 			depositRate: 300000,
 			transactionRate: 15000,
-			percent: 3.9,
-			bonusPercent: 0.5,
+			percent: 4,
+			bonusPercent: 1,
 			// finaly data
 			bonusSum: 0,
 			totalSum: 0,
@@ -321,54 +322,56 @@ class Calculator extends React.Component {
 		} = this.state
 
 		return (
-			<section className="Calculator">
-				<div className="container">
-					<h2 className="title-h2 Calculator__title">
-						Рассчитайте доход&nbsp;
-						<span className="Calculator__title__inline">
-							по накопительному счету
-						</span>
-					</h2>
-					<PlusesList />
-					<div className="Calculator__main">
-						<div className="Calculator__left">
-							{/* сумма депозита */}
-							<CalculatorInput
-								tariffName={tariffName}
-								depositRate={depositRate}
-								minDepositRate={minDepositRate}
-								maxDepositRate={maxDepositRate}
-								title={'Первоначальная сумма накопления'}
-								getSumFormat={this.getSumFormat}
-								handleInputBlur={this.handleInputBlur}
-								handleInputChange={this.handleInputChange}
-								handleChange={this.handleInputRangeChange}
-							/>
-							<CalculatorMonthTabs
-								deposit={deposit}
-								month={month}
-								title={'Укажите срок накопления'}
-								handleClick={this.handleMonthClick}
-							/>
-							<CalculatorBonusInput
-								transactionRate={transactionRate}
-								bonusPercent={bonusPercent}
-								handleBonusInputChange={this.handleBonusInputChange}
-								handleBonusInputBlur={this.handleBonusInputBlur}
-								handleBonusInputRangeChange={this.handleBonusInputRangeChange}
-							/>
-						</div>
-						<div className="Calculator__rigth">
-							<CalculatorInfoPanel
-								totalPercent={bonusPercent + percent}
-								bonusSum={this.getSumFormat(totalSum)}
-								finalSum={this.getSumFormat(totalSum + depositRate)}
-								date={this.getDate()}
-							/>
+			<Element name="Calculator">
+				<section className="Calculator">
+					<div className="container">
+						<h2 className="title-h2 Calculator__title">
+							Рассчитайте доход&nbsp;
+							<span className="Calculator__title__inline">
+								по накопительному счету
+							</span>
+						</h2>
+						<PlusesList />
+						<div className="Calculator__main">
+							<div className="Calculator__left">
+								{/* сумма депозита */}
+								<CalculatorInput
+									tariffName={tariffName}
+									depositRate={depositRate}
+									minDepositRate={minDepositRate}
+									maxDepositRate={maxDepositRate}
+									title={'Первоначальная сумма накопления'}
+									getSumFormat={this.getSumFormat}
+									handleInputBlur={this.handleInputBlur}
+									handleInputChange={this.handleInputChange}
+									handleChange={this.handleInputRangeChange}
+								/>
+								<CalculatorMonthTabs
+									deposit={deposit}
+									month={month}
+									title={'Укажите срок накопления'}
+									handleClick={this.handleMonthClick}
+								/>
+								<CalculatorBonusInput
+									transactionRate={transactionRate}
+									bonusPercent={bonusPercent}
+									handleBonusInputChange={this.handleBonusInputChange}
+									handleBonusInputBlur={this.handleBonusInputBlur}
+									handleBonusInputRangeChange={this.handleBonusInputRangeChange}
+								/>
+							</div>
+							<div className="Calculator__rigth">
+								<CalculatorInfoPanel
+									totalPercent={bonusPercent + percent}
+									bonusSum={this.getSumFormat(totalSum)}
+									finalSum={this.getSumFormat(totalSum + depositRate)}
+									date={this.getDate()}
+								/>
+							</div>
 						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			</Element>
 		)
 	}
 }

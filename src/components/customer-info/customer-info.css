@@ -4,19 +4,19 @@
 
 @media (min-width: 768px) {
   .CustomerInfo {
-    padding: 40px 0;
+    padding: 40px 0 0;
   }
 }
 
 @media (min-width: 1200px) {
   .CustomerInfo {
-    padding: 60px 0;
+    padding: 60px 0 0;
   }
 }
 
 @media (min-width: 1600px) {
  .CustomerInfo {
-    padding: 80px 0;
+    padding: 80px 0 0;
   }
 }
 

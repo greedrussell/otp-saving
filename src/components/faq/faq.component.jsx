@@ -1,4 +1,5 @@
 import React from 'react'
+import { Element } from 'react-scroll'
 
 import './faq.css'
 import ArrowSVG from '../../assets/img/faq__arrow.svg'
@@ -70,28 +71,30 @@ class Faq extends React.Component {
 
 	render() {
 		return (
-			<section className="Faq">
-				<div className="container">
-					<div className="Faq__wrapper">
-						<h2 className="title-h2 Faq__title">
-							Вопросы&nbsp;
-							<span className="Faq__title__inline">и ответы</span>
-						</h2>
-						<ul className="Faq__list">
-							{FAQ_LIST.map(({ title, text, id }) => (
-								<FaqItem
-									title={title}
-									text={text}
-									key={id}
-									id={id}
-									activeId={this.state.activeId}
-									hadnleClick={this.hadnleClick}
-								/>
-							))}
-						</ul>
+			<Element name="Faq">
+				<section className="Faq">
+					<div className="container">
+						<div className="Faq__wrapper">
+							<h2 className="title-h2 Faq__title">
+								Вопросы&nbsp;
+								<span className="Faq__title__inline">и ответы</span>
+							</h2>
+							<ul className="Faq__list">
+								{FAQ_LIST.map(({ title, text, id }) => (
+									<FaqItem
+										title={title}
+										text={text}
+										key={id}
+										id={id}
+										activeId={this.state.activeId}
+										hadnleClick={this.hadnleClick}
+									/>
+								))}
+							</ul>
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			</Element>
 		)
 	}
 }

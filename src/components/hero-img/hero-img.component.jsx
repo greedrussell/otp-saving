@@ -21,7 +21,7 @@ const HeroImgPluses = () => (
 		<li className="HeroImg__list__item">
 			<img src={ArrowSVG} alt="" className="HeroImg__list__item__img" />
 			<p className="HeroImg__list__item__text">
-				Акция «Будь в плюсе» — возможность получить
+				Акция «Будь в плюсе» — возможность получить&nbsp;
 				<span className="inline">до 350 000 рублей</span>
 			</p>
 		</li>
@@ -47,14 +47,18 @@ const HeroImgNav = ({ isScroll }) => (
 				</a>
 				<ul className="HeroImg__nav__list">
 					<li className="HeroImg__nav__item">
-						<a className="HeroImg__nav__item__link" href="/#">
-							Рассчитать доход
-						</a>
+						<Link to="Calculator" smooth={true} duration={500}>
+							<button className="HeroImg__nav__item__link">
+								Рассчитать доход
+							</button>
+						</Link>
 					</li>
 					<li className="HeroImg__nav__item">
-						<a className="HeroImg__nav__item__link" href="/#">
-							Вопросы и ответы
-						</a>
+						<Link to="Faq" smooth={true} duration={500}>
+							<button className="HeroImg__nav__item__link">
+								Вопросы и ответы
+							</button>
+						</Link>
 					</li>
 					<li className="HeroImg__nav__item">
 						<Link to="Form" smooth={true} duration={500}>
