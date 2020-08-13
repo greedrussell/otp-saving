@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './how-it-work.css'
-import PdfSVG from '../../assets/img/pdf.svg'
+// import PdfSVG from '../../assets/img/pdf.svg'
 import ChartDesktopPNG from '../../assets/img/how-it-work__desktop.png'
 import ChartMobilePNG from '../../assets/img/how-it-work__mobile.png'
 

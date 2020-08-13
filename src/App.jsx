@@ -21,7 +21,7 @@ const App = () => {
 			<Calculator />
 			<HowItWork />
 			<CustomerInfo />
-			{/* <OldForm /> */}
+			<OldForm />
 			<Faq />
 			<MobileApp />
 			<Footer />

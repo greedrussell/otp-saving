@@ -3,7 +3,7 @@ import { Element, Link } from 'react-scroll'
 
 import './customer-info.css'
 import CardPNG from '../../assets/img/customer-info.png'
-import PdfSVG from '../../assets/img/pdf.svg'
+// import PdfSVG from '../../assets/img/pdf.svg'
 
 const CustomerInfoList = () => (
 	<ul className="CustomerInfoList">

@@ -10,6 +10,18 @@
   }
 }
 
+@media (min-width: 992px) {
+  .PlusesList {
+    margin: 0 -32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .PlusesList {
+    margin: 0;
+  }
+}
+
 .PlusItem {
   display: flex;
   flex: 0 0 100%;
@@ -30,7 +42,14 @@
 @media (min-width: 992px) {
   .PlusItem {
     flex: 0 0 33%;
+    padding: 0 32px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .PlusItem {
     margin-bottom: 0;
+    padding: 0;
   }
 }
 

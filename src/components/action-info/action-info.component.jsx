@@ -3,8 +3,8 @@ import React from 'react'
 import './action-info.css'
 import ArrowDownSVG from '../../assets/img/action-info__arrow-down.svg'
 import ArrowUpSVG from '../../assets/img/action-info__arrow-up.svg'
-import GirlPNG from '../../assets/img/action-info__girl.png'
-import PdfSVG from '../../assets/img/pdf.svg'
+// import GirlPNG from '../../assets/img/action-info__girl.png'
+// import PdfSVG from '../../assets/img/pdf.svg'
 
 const ToggleButton = ({ isActive, handleClick }) => (
 	<>
