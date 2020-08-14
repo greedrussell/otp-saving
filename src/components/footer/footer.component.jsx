@@ -148,11 +148,13 @@ const Footer = () => (
 		<div className="Footer__bottom">
 			<div className="container">
 				<div className="Footer__bottom__wrapper">
-					<img
-						src={LogoSVG}
-						alt="Логотип ОТП Банка"
-						className="Footer__bottom__img"
-					/>
+					<a href="https://www.otpbank.ru/">
+						<img
+							src={LogoSVG}
+							alt="Логотип ОТП Банка"
+							className="Footer__bottom__img"
+						/>
+					</a>
 					<p className="Footer__bottom__text">
 						Генеральная лицензия Банка России №2766 от 27.11.2014 г.
 					</p>

@@ -96,6 +96,6 @@
   height: 48px;
 }
 
-.MobileApp__app-block__img:first-child {
+.MobileApp__app-block a:first-child {
   margin-right: 12px;
 }

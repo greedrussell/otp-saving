@@ -84,7 +84,11 @@ class CustomerInfo extends React.Component {
 							<CustomerInfoList />
 						</div>
 						<div className="CustomerInfo__footer">
-							<Link to="Form" smooth={true} duration={500}>
+							<Link
+								to="Form"
+								smooth={true}
+								duration={500}
+								className="CustomerInfo__footer__link">
 								<button className="btn btn--green">Заказать карту</button>
 							</Link>
 							{/* <div className="CustomerInfo__footer__block">

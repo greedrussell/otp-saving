@@ -93,8 +93,17 @@
 @media (min-width: 768px) {
   .CustomerInfo__footer {
     flex-direction: row;
-    
     align-items: center;
+  }
+}
+
+.CustomerInfo__footer__link button {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .CustomerInfo__footer__link button {
+    width: auto;
   }
 }
 
