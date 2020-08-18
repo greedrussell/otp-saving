@@ -146,11 +146,12 @@
 
 .HeroImg__btn {
   width: 100%;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
   .HeroImg__btn {
-    width: auto;
+    width: max-content;
   }
 }
 
@@ -268,8 +269,4 @@
   .HeroImg__nav .HeroImg__nav__link__img--scroll {
     opacity: 0;
   }
-}
-
-.HeroImg__btn-link {
-  width: 100%;
 }

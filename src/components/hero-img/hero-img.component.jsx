@@ -123,15 +123,13 @@ class HeroImg extends React.Component {
 							</span>
 						</h1>
 						<HeroImgPluses />
-						<Link
-							to="Form"
-							smooth={true}
-							duration={500}
-							className="HeroImg__btn-link">
-							<button className="HeroImg__btn btn btn--orange">
-								Открыть счёт
-							</button>
-						</Link>
+						<a
+							target="_blank"
+							rel="noopener noreferrer"
+							href="https://cards.otpbank.ru/debit/deposit-claim/?_ga=2.193274602.614762482.1597646882-974556188.1594278884"
+							className="HeroImg__btn btn btn--orange">
+							Открыть счёт
+						</a>
 					</div>
 				</div>
 			</section>
