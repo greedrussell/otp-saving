@@ -4,7 +4,8 @@ import './action-info.css'
 import ArrowDownSVG from '../../assets/img/action-info__arrow-down.svg'
 import ArrowUpSVG from '../../assets/img/action-info__arrow-up.svg'
 // import GirlPNG from '../../assets/img/action-info__girl.png'
-// import PdfSVG from '../../assets/img/pdf.svg'
+import PdfSVG from '../../assets/img/pdf.svg'
+import PDF from '../../assets/pdf/action-info.pdf'
 
 const ToggleButton = ({ isActive, handleClick }) => (
 	<>
@@ -53,16 +54,16 @@ const InfoBlock = () => (
 				</p>
 			</div>
 		</div>
-		{/* <div className="InfoBlock__pdf-block">
+		<div className="InfoBlock__pdf-block">
 			<img
 				className="InfoBlock__pdf-block__img"
 				src={PdfSVG}
 				alt="Иконка PDF файла"
 			/>
-			<a href="/#" className="InfoBlock__pdf-block__text">
+			<a href={PDF} className="InfoBlock__pdf-block__text">
 				Правила акции
 			</a>
-		</div> */}
+		</div>
 	</div>
 )
 

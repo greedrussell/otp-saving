@@ -1,9 +1,10 @@
 import React from 'react'
 
 import './how-it-work.css'
-// import PdfSVG from '../../assets/img/pdf.svg'
+import PdfSVG from '../../assets/img/pdf.svg'
 import ChartDesktopPNG from '../../assets/img/how-it-work__desktop.png'
 import ChartMobilePNG from '../../assets/img/how-it-work__mobile.png'
+import PDF from '../../assets/pdf/how-it-work.pdf'
 
 const HowItWork = () => (
 	<section className="HowItWork">
@@ -54,7 +55,7 @@ const HowItWork = () => (
 						4%
 					</span>
 				</p>
-				{/* <a href="#/" className="HowItWork__bottom__pdf-block">
+				<a href={PDF} className="HowItWork__bottom__pdf-block">
 					<img
 						className="HowItWork__bottom__pdf-block__img"
 						src={PdfSVG}
@@ -63,7 +64,7 @@ const HowItWork = () => (
 					<p className="HowItWork__bottom__pdf-block__text">
 						Правила по накопительному счету
 					</p>
-				</a> */}
+				</a>
 			</div>
 		</div>
 	</section>

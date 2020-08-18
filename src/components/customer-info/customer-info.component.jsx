@@ -1,9 +1,10 @@
 import React from 'react'
-import { Element, Link } from 'react-scroll'
+import { Element } from 'react-scroll'
 
 import './customer-info.css'
 import CardPNG from '../../assets/img/customer-info.png'
-// import PdfSVG from '../../assets/img/pdf.svg'
+import PdfSVG from '../../assets/img/pdf.svg'
+import PDF from '../../assets/pdf/customer-info.pdf'
 
 const CustomerInfoList = () => (
 	<ul className="CustomerInfoList">
@@ -84,25 +85,16 @@ class CustomerInfo extends React.Component {
 							<CustomerInfoList />
 						</div>
 						<div className="CustomerInfo__footer">
-							<Link
-								to="Form"
-								smooth={true}
-								duration={500}
-								className="CustomerInfo__footer__link">
-								<button className="btn btn--green">Заказать карту</button>
-							</Link>
-							{/* <div className="CustomerInfo__footer__block">
+							<div className="CustomerInfo__footer__block">
 								<img
 									className="CustomerInfo__footer__block__img"
 									src={PdfSVG}
 									alt="Иконка PDF файла"
 								/>
-								<a
-									href="https://www.otpbank.ru/f/documents/cards/debet-cards/pravila-cash-deposit.pdf"
-									className="CustomerInfo__footer__block__text">
+								<a href={PDF} className="CustomerInfo__footer__block__text">
 									Тарифы по карте
 								</a>
-							</div> */}
+							</div>
 						</div>
 					</div>
 				</section>

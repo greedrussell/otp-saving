@@ -10,7 +10,7 @@ const CalculatorInfoPanel = ({ date, totalPercent, bonusSum, finalSum }) => {
 			<p className="CalculatorInfoPanel__date">{date}</p>
 			<ul className="CalculatorInfoPanel__list">
 				<li className="CalculatorInfoPanel__item">
-					<p className="CalculatorInfoPanel__item__title">Доход по вкладу</p>
+					<p className="CalculatorInfoPanel__item__title">Доход по счету</p>
 					<p className="CalculatorInfoPanel__item__text">{bonusSum} ₽</p>
 				</li>
 				<li className="CalculatorInfoPanel__item">
