@@ -111,7 +111,7 @@ img {
   font-family: 'SourceSansProBold', sans-serif;
   font-weight: bold;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 48px;
   color: #FFFFFF;
   height: 48px;
   display: flex;
@@ -127,13 +127,13 @@ img {
 @media (min-width: 1200px) {
   .btn {
     height: 56px;
+    line-height: 56px;
   }
 }
 
 @media (min-width: 1600px) {
   .btn {
     font-size: 20px;
-    line-height: 28px;
   }
 }
 
@@ -170,14 +170,14 @@ img {
 .btn--small {
   height: 36px;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 36px;
 }
 
 @media (min-width: 768px) {
   .btn-small {
     height: 48px;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 48px;
   }
 }
 
