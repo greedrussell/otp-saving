@@ -51,8 +51,8 @@ const HowItWork = () => (
 					Повышенная ставка начисляется на среднемесячный остаток по
 					счёту,&nbsp;
 					<span className="HowItWork__bottom__text__inline">
-						не превышающий 350 000 рублей. Далее – начисление по базовой ставке
-						4%
+						не превышающий 350 000 рублей. Далее &mdash; начисление по базовой
+						ставке 4%
 					</span>
 				</p>
 				<a href={PDF} className="HowItWork__bottom__pdf-block">
@@ -62,7 +62,7 @@ const HowItWork = () => (
 						alt="Иконка PDF файла"
 					/>
 					<p className="HowItWork__bottom__pdf-block__text">
-						Правила по накопительному счету
+						Подробные Правила программы
 					</p>
 				</a>
 			</div>

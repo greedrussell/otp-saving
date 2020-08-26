@@ -9,7 +9,7 @@ import PDF from '../../assets/pdf/customer-info.pdf'
 const CustomerInfoList = () => (
 	<ul className="CustomerInfoList">
 		<li className="CustomerInfoList__item">
-			Обслуживание карты при выполнении условий -&nbsp;
+			Обслуживание карты при выполнении условий &mdash;&nbsp;
 			<p className="inline">
 				<span className="CustomerInfoList__item__green">0 ₽</span>
 			</p>
@@ -26,7 +26,7 @@ const CustomerInfoList = () => (
 		</li>
 		<li className="CustomerInfoList__item">
 			Снятие наличных&nbsp; <p className="inline">в банкоматах</p> любых банков
-			без комиссии —&nbsp;<p className="inline">до 30 000 ₽</p>
+			без комиссии &mdash;&nbsp;<p className="inline">до 30 000 ₽</p>
 		</li>
 	</ul>
 )

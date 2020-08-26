@@ -21,7 +21,7 @@ const HeroImgPluses = () => (
 		<li className="HeroImg__list__item">
 			<img src={ArrowSVG} alt="" className="HeroImg__list__item__img" />
 			<p className="HeroImg__list__item__text">
-				Акция «Будь в плюсе» — возможность получить&nbsp;
+				Акция «Будь в плюсе» &mdash; возможность получить&nbsp;
 				<span className="inline">до 350 000 рублей</span>
 			</p>
 		</li>
