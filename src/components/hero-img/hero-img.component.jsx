@@ -123,13 +123,15 @@ class HeroImg extends React.Component {
 							</span>
 						</h1>
 						<HeroImgPluses />
-						<a
-							target="_blank"
-							rel="noopener noreferrer"
-							href="https://cards.otpbank.ru/debit/deposit-claim/?_ga=2.193274602.614762482.1597646882-974556188.1594278884"
-							className="HeroImg__btn btn btn--orange">
-							Открыть счёт
-						</a>
+						<div className="HeroImg__btn">
+							<a
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://cards.otpbank.ru/debit/deposit-claim/?_ga=2.193274602.614762482.1597646882-974556188.1594278884"
+								className=" btn btn--orange">
+								Открыть счёт
+							</a>
+						</div>
 					</div>
 				</div>
 			</section>
