@@ -1,5 +1,6 @@
 import React from 'react'
 import { Element } from 'react-scroll'
+import { connect } from 'react-redux'
 
 import './customer-info.css'
 import CardPNG from '../../assets/img/customer-info.png'
@@ -85,16 +86,32 @@ class CustomerInfo extends React.Component {
 							<CustomerInfoList />
 						</div>
 						<div className="CustomerInfo__footer">
-							<div className="CustomerInfo__footer__block">
-								<img
-									className="CustomerInfo__footer__block__img"
-									src={PdfSVG}
-									alt="Иконка PDF файла"
-								/>
-								<a href={PDF} className="CustomerInfo__footer__block__text">
-									Тарифы по карте
-								</a>
-							</div>
+							{
+								this.props.tariffName === 'Накопительный счет' ? (
+									<a href={PDF} className="CustomerInfo__footer__block">
+										<img
+											className="CustomerInfo__footer__block__img"
+											src={PdfSVG}
+											alt="Иконка PDF файла"
+										/>
+										<div href={PDF} className="CustomerInfo__footer__block__text">
+											Тарифы по карте
+										</div>
+									</a>
+								) : (
+										<a href={PDF} className="CustomerInfo__footer__block">
+											<img
+												className="CustomerInfo__footer__block__img"
+												src={PdfSVG}
+												alt="Иконка PDF файла"
+											/>
+											<div href={PDF} className="CustomerInfo__footer__block__text">
+												Тарифы по карте Накопительный счет + Premium
+											</div>
+										</a>
+									)
+							}
+
 						</div>
 					</div>
 				</section>
@@ -107,4 +124,8 @@ class CustomerInfo extends React.Component {
 	}
 }
 
-export default CustomerInfo
+const matStateToProps = state => ({
+	tariffName: state.tariff.tariffName
+})
+
+export default connect(matStateToProps, null, null)(CustomerInfo)

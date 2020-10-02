@@ -1,12 +1,14 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import './how-it-work.css'
 import PdfSVG from '../../assets/img/pdf.svg'
 import ChartDesktopPNG from '../../assets/img/how-it-work__desktop.png'
+import ChartDesktopPremiumPNG from '../../assets/img/how-it-work__desktop--premium.png'
 import ChartMobilePNG from '../../assets/img/how-it-work__mobile.png'
 import PDF from '../../assets/pdf/how-it-work.pdf'
 
-const HowItWork = () => (
+const HowItWork = ({ tariffName }) => (
 	<section className="HowItWork">
 		<div className="container">
 			<div className="HowItWork__top">
@@ -34,16 +36,37 @@ const HowItWork = () => (
 					</span>
 				</div>
 				<div className="HowItWork__middle__img-block">
-					<img
-						className="HowItWork__middle__img-block__img HowItWork__middle__img-block__img--mobile"
-						src={ChartMobilePNG}
-						alt=""
-					/>
-					<img
-						className="HowItWork__middle__img-block__img HowItWork__middle__img-block__img--desktop"
-						src={ChartDesktopPNG}
-						alt=""
-					/>
+					{
+						tariffName === 'Накопительный счет Premium' ? (
+							<img
+								className="HowItWork__middle__img-block__img HowItWork__middle__img-block__img--mobile"
+								src={ChartMobilePNG}
+								alt=""
+							/>
+						) : (
+								<img
+									className="HowItWork__middle__img-block__img HowItWork__middle__img-block__img--mobile"
+									src={ChartMobilePNG}
+									alt=""
+								/>
+							)
+					}
+					{
+						tariffName === 'Накопительный счет Premium' ? (
+							<img
+								className="HowItWork__middle__img-block__img HowItWork__middle__img-block__img--desktop"
+								src={ChartDesktopPremiumPNG}
+								alt=""
+							/>
+						) : (
+								<img
+									className="HowItWork__middle__img-block__img HowItWork__middle__img-block__img--desktop"
+									src={ChartDesktopPNG}
+									alt=""
+								/>
+							)
+					}
+
 				</div>
 			</div>
 			<div className="HowItWork__bottom">
@@ -51,23 +74,44 @@ const HowItWork = () => (
 					Повышенная ставка начисляется на среднемесячный остаток по
 					счёту,&nbsp;
 					<span className="HowItWork__bottom__text__inline">
-						не превышающий 350 000 рублей. Далее &mdash; начисление по базовой
+						не превышающий {
+							tariffName === 'Накопительный счет Premium' ? '1 000 000 рублей' : '350 000 рублей'
+						} . Далее &mdash; начисление по базовой
 						ставке 4%
 					</span>
 				</p>
-				<a href={PDF} className="HowItWork__bottom__pdf-block">
-					<img
-						className="HowItWork__bottom__pdf-block__img"
-						src={PdfSVG}
-						alt="Иконка PDF файла"
-					/>
-					<p className="HowItWork__bottom__pdf-block__text">
-						Подробные Правила программы
-					</p>
-				</a>
+				{
+					tariffName === 'Накопительный счет Premium' ? (
+						<a href={PDF} className="HowItWork__bottom__pdf-block">
+							<img
+								className="HowItWork__bottom__pdf-block__img"
+								src={PdfSVG}
+								alt="Иконка PDF файла"
+							/>
+							<p className="HowItWork__bottom__pdf-block__text">
+								Правила по накопительному счету + Premium
+							</p>
+						</a>
+					) : (
+							<a href={PDF} className="HowItWork__bottom__pdf-block">
+								<img
+									className="HowItWork__bottom__pdf-block__img"
+									src={PdfSVG}
+									alt="Иконка PDF файла"
+								/>
+								<p className="HowItWork__bottom__pdf-block__text">
+									Подробные Правила программы
+							</p>
+							</a>
+						)
+				}
 			</div>
 		</div>
 	</section>
 )
 
-export default HowItWork
+const mapStateToProps = state => ({
+	tariffName: state.tariff.tariffName
+})
+
+export default connect(mapStateToProps, null, null)(HowItWork)
