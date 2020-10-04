@@ -32,7 +32,7 @@ const HeroImgNav = ({ isScroll }) => (
 	<nav className={isScroll ? 'HeroImg__nav scroll' : 'HeroImg__nav'}>
 		<div className="container">
 			<div className="HeroImg__nav__wrapper">
-				<a href="/#" className="HeroImg__nav__link">
+				<a href="https://www.otpbank.ru/" className="HeroImg__nav__link">
 					<img
 						src={LogoSVG}
 						alt="OTP bank logo"

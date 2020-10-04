@@ -5,6 +5,7 @@ import './how-it-work.css'
 import PdfSVG from '../../assets/img/pdf.svg'
 import ChartDesktopPNG from '../../assets/img/how-it-work__desktop.png'
 import ChartDesktopPremiumPNG from '../../assets/img/how-it-work__desktop--premium.png'
+import ChartMobilePremiumPNG from '../../assets/img/how-it-work__mobile--premium.png'
 import ChartMobilePNG from '../../assets/img/how-it-work__mobile.png'
 import PDF from '../../assets/pdf/how-it-work.pdf'
 
@@ -40,7 +41,7 @@ const HowItWork = ({ tariffName }) => (
 						tariffName === 'Накопительный счет Premium' ? (
 							<img
 								className="HowItWork__middle__img-block__img HowItWork__middle__img-block__img--mobile"
-								src={ChartMobilePNG}
+								src={ChartMobilePremiumPNG}
 								alt=""
 							/>
 						) : (

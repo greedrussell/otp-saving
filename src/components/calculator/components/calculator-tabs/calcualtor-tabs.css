@@ -1,0 +1,47 @@
+.CalculatorTabs {
+  display: flex;
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #F1F1F1;
+  margin-bottom: 64px;
+}
+
+.CalculatorTabs__text {
+  font-family: 'SquadExtraBold', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 28px;
+  font-size: 20px;
+  color: #898989;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .CalculatorTabs__text {
+    line-height: 32px;
+    font-size: 24px;
+  }
+}
+
+.CalculatorTabs__text:hover {
+  color: #151617;
+}
+
+.CalculatorTabs__text.active {
+  color: #151617;
+}
+
+.CalculatorTariffTabs__green-line {
+  display: block;
+  transition: 0.4s;
+  height: 4px;
+  border-radius: 6px;
+  background-color: #52AE30;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+}
+
+.CalculatorTabs__text:first-child {
+  margin-right: 48px;
+}

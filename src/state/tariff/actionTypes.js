@@ -1,0 +1,4 @@
+export default {
+  SET_TARIFF: 'SET_TARIFF',
+  SET_PREMIUM_TARIFF: 'SET_PREMIUM_TARIFF',
+}

@@ -15,17 +15,17 @@ const AboutActionItem = ({
 	numberImgUrl,
 	index,
 }) => (
-	<div className="AboutActionItem">
-		<div className="AboutActionItem__wrapper">
-			<img src={imgUrl} alt="" className="AboutActionItem__img" />
-			{children}
-			<div className={`AboutActionItem__bg AboutActionItem__bg--${index}`}>
-				<img src={numberImgUrl} alt="" className="AboutActionItem__bg__img" />
+		<div className="AboutActionItem">
+			<div className="AboutActionItem__wrapper">
+				<img src={imgUrl} alt="" className="AboutActionItem__img" />
+				{children}
+				<div className={`AboutActionItem__bg AboutActionItem__bg--${index}`}>
+					<img src={numberImgUrl} alt="" className="AboutActionItem__bg__img" />
+				</div>
 			</div>
+			{textComponent}
 		</div>
-		{textComponent}
-	</div>
-)
+	)
 
 const AboutAction = () => (
 	<section className="AboutAction">
@@ -38,9 +38,12 @@ const AboutAction = () => (
 					textComponent={
 						<p className="AboutActionItem__text">
 							и получите{' '}
-							<span className="AboutActionItem__text-green">
-								карту «ОТП Покупки»
-							</span>
+							<a
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://cards.otpbank.ru/debit/deposit-claim/?_ga=2.193274602.614762482.1597646882-974556188.1594278884" className="AboutActionItem__text-green">
+								карту «ОТП Покупки»&nbsp;
+							</a>
 							. Карту можно оформить в отделении банка
 						</p>
 					}

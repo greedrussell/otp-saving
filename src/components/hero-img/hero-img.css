@@ -239,6 +239,7 @@
   line-height: 24px;
   color: #fff;
   transition: 0.4s;
+  cursor: pointer;
 }
 
 .HeroImg__nav__item__link:hover {
