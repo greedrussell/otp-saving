@@ -32,7 +32,7 @@ const initialState = {
     },
   ],
   minDepositRate: 1000,
-  maxDepositRate: 350000,
+  maxDepositRate: 1000000,
   month: 3,
   depositRate: 300000,
   transactionRate: 15000,
@@ -67,7 +67,7 @@ const initialState = {
         },
       ],
       minDepositRate: 1000,
-      maxDepositRate: 350000,
+      maxDepositRate: 1000000,
     },
     {
       id: 2,

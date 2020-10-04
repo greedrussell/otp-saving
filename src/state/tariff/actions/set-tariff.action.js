@@ -7,7 +7,7 @@ import {
 } from '../../../helpers/calculator.helper'
 
 const actionSetTariff = (tariff, depositRate, transactionRate) => {
-  const { minDepositRate, maxDepositRate } = tariff
+  const { minDepositRate, maxDepositRate, name: tariffName } = tariff
   const { percent, month } = tariff.deposit[0]
 
   let newDepositRate = depositRate
@@ -20,16 +20,16 @@ const actionSetTariff = (tariff, depositRate, transactionRate) => {
     newDepositRate = maxDepositRate
   }
 
-  const bonusPercent = getBonusPercent(transactionRate)
+  const bonusPercent = getBonusPercent(tariffName, transactionRate)
   const sum = getSum(newDepositRate, percent, month)
-  const bonusSum = getBonusSum(newDepositRate, bonusPercent, month)
+  const bonusSum = getBonusSum(tariffName, newDepositRate, bonusPercent, month)
   const totalSum = getTotalSum(sum, bonusSum)
 
   return ({
     type: actionTypes.SET_TARIFF,
     data: {
       activeTariff: tariff.id,
-      tariffName: tariff.name,
+      tariffName,
       deposit: tariff.deposit,
       minDepositRate,
       maxDepositRate,

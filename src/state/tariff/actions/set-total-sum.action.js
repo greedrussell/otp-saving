@@ -5,9 +5,9 @@ import {
   getTotalSum
 } from '../../../helpers/calculator.helper'
 
-const actionSetTotalSum = (depositRate, percent, bonusPercent, month) => {
+const actionSetTotalSum = (depositRate, percent, bonusPercent, month, tariffName) => {
   const sum = getSum(depositRate, percent, month)
-  const bonusSum = getBonusSum(depositRate, bonusPercent, month)
+  const bonusSum = getBonusSum(tariffName, depositRate, bonusPercent, month)
   const totalSum = getTotalSum(sum, bonusSum)
 
   return ({

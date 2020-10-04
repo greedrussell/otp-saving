@@ -22,16 +22,16 @@ import {
 
 class Calculator extends React.Component {
 	componentDidMount() {
-		const { bonusPercent, depositRate, percent, month, actionSetTotalSum } = this.props
+		const { bonusPercent, depositRate, percent, month, actionSetTotalSum, tariffName } = this.props
 
 		window.addEventListener("load", this.greenLineSetWidth)
 		window.addEventListener("resize", this.greenLineSetWidth)
 
-		actionSetTotalSum(depositRate, percent, bonusPercent, month)
+		actionSetTotalSum(depositRate, percent, bonusPercent, month, tariffName)
 	}
 
 	handleInputChange = event => {
-		const { actionSetDepositRate, percent, month, transactionRate } = this.props
+		const { actionSetDepositRate, percent, month, transactionRate, tariffName } = this.props
 		const depositRate = +event.target.value
 
 		if (isNaN(depositRate)) {
@@ -46,7 +46,7 @@ class Calculator extends React.Component {
 			return
 		}
 
-		actionSetDepositRate(depositRate, transactionRate, percent, month)
+		actionSetDepositRate(depositRate, transactionRate, percent, month, tariffName)
 	}
 
 	handleInputBlur = () => {
@@ -57,7 +57,8 @@ class Calculator extends React.Component {
 			transactionRate,
 			percent,
 			month,
-			actionSetDepositRate
+			actionSetDepositRate,
+			tariffName
 		} = this.props
 
 		let newDepositRate = depositRate
@@ -74,23 +75,25 @@ class Calculator extends React.Component {
 			newDepositRate,
 			transactionRate,
 			percent,
-			month
+			month,
+			tariffName
 		)
 	}
 
 	handleInputRangeChange = depositRate => {
-		const { transactionRate, percent, month, actionSetDepositRate } = this.props
+		const { transactionRate, percent, month, actionSetDepositRate, tariffName } = this.props
 
 		actionSetDepositRate(
 			depositRate[0],
 			transactionRate,
 			percent,
-			month
+			month,
+			tariffName
 		)
 	}
 
 	handleMonthClick = (newMonth, percent) => () => {
-		const { depositRate, transactionRate, month, actionSetMonth } = this.props
+		const { depositRate, transactionRate, month, actionSetMonth, tariffName } = this.props
 
 		if (month === newMonth) {
 			return
@@ -101,11 +104,12 @@ class Calculator extends React.Component {
 			transactionRate,
 			percent,
 			newMonth,
+			tariffName
 		)
 	}
 
 	handleBonusInputChange = event => {
-		const maxTransactionRate = 100000
+		const maxTransactionRate = 200000
 		const transactionRate = +event.target.value
 
 		if (isNaN(transactionRate)) {
@@ -120,14 +124,14 @@ class Calculator extends React.Component {
 			return
 		}
 
-		const { percent, month, depositRate, actionSetBonusPercent } = this.props
+		const { percent, month, depositRate, actionSetBonusPercent, tariffName } = this.props
 
-		actionSetBonusPercent(depositRate, transactionRate, percent, month)
+		actionSetBonusPercent(depositRate, transactionRate, percent, month, tariffName)
 	}
 
 	handleBonusInputBlur = () => {
-		const maxTransactionRate = 100000
-		const { percent, month, depositRate, actionSetBonusPercent } = this.props
+		const maxTransactionRate = 200000
+		const { percent, month, depositRate, actionSetBonusPercent, tariffName } = this.props
 
 		let transactionRate = this.props.transactionRate
 
@@ -135,17 +139,18 @@ class Calculator extends React.Component {
 			transactionRate = maxTransactionRate
 		}
 
-		actionSetBonusPercent(depositRate, transactionRate, percent, month)
+		actionSetBonusPercent(depositRate, transactionRate, percent, month, tariffName)
 	}
 
 	handleBonusInputRangeChange = transactionRate => {
-		const { depositRate, percent, month, actionSetBonusPercent } = this.props
+		const { depositRate, percent, month, actionSetBonusPercent, tariffName } = this.props
 
 		actionSetBonusPercent(
 			depositRate,
 			transactionRate[0],
 			percent,
 			month,
+			tariffName
 		)
 	}
 
