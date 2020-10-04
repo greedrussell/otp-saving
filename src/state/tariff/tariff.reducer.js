@@ -1,5 +1,9 @@
 import actionTypes from './actionTypes'
 import { reducerSetTariff } from './reducers/set-tariff.reducer'
+import { reducerSetTotalSum } from './reducers/set-total-sum.reducer'
+import { reducerSetDepositRate } from './reducers/set-deposit-rate.reducer'
+import { reducerSetMonth } from './reducers/set-month.reducer'
+import { reducerSetBonusPercent } from './reducers/set-bonus-percent.reducer'
 
 const initialState = {
   activeTariff: 1,
@@ -29,14 +33,11 @@ const initialState = {
   ],
   minDepositRate: 1000,
   maxDepositRate: 350000,
-  // для подсчета дохода
   month: 3,
   depositRate: 300000,
   transactionRate: 15000,
   percent: 4,
   bonusPercent: 1,
-  // finaly data
-  bonusSum: 0,
   totalSum: 0,
   tariffList: [
     {
@@ -107,6 +108,18 @@ const tariffReducer = (
   switch (type) {
     case actionTypes.SET_TARIFF:
       return reducerSetTariff(state, data)
+
+    case actionTypes.SET_TOTAL_SUM:
+      return reducerSetTotalSum(state, data)
+
+    case actionTypes.SET_DEPOSIT_RATE:
+      return reducerSetDepositRate(state, data)
+
+    case actionTypes.SET_MONTH:
+      return reducerSetMonth(state, data)
+
+    case actionTypes.SET_BONUS_PERCENT:
+      return reducerSetBonusPercent(state, data)
 
     default:
       return state

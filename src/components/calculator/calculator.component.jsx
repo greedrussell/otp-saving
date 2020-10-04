@@ -11,144 +11,34 @@ import CalculatorMonthTabs from './components/calculator-month-tabs/calculator-m
 import CalculatorBonusInput from './components/calculator-bonus-input/calculator-bonus-input.component'
 import CalculatorTabsComponent from './components/calculator-tabs/calculator-tabs.component'
 import actionSetTariff from '../../state/tariff/actions/set-tariff.action'
+import actionSetTotalSum from '../../state/tariff/actions/set-total-sum.action'
+import actionSetDepositRate from '../../state/tariff/actions/set-deposit-rate.action'
+import actionSetMonth from '../../state/tariff/actions/set-month.action'
+import actionSetBonusPercent from '../../state/tariff/actions/set-bonus-percent.action'
+import {
+	getDate,
+	getSumFormat,
+} from '../../helpers/calculator.helper'
 
 class Calculator extends React.Component {
-	constructor(props) {
-		super(props)
-
-		this.state = {
-			// для подсчета дохода
-			month: 3,
-			depositRate: 300000,
-			transactionRate: 15000,
-			percent: 4,
-			bonusPercent: 1,
-			// finaly data
-			bonusSum: 0,
-			totalSum: 0,
-		}
-	}
-
 	componentDidMount() {
-		const { bonusPercent, depositRate, percent, month } = this.state
-
-		const sum = this.getSum(depositRate, percent, month)
-		const bonusSum = this.getBonusSum(depositRate, bonusPercent, month)
-		const totalSum = sum + bonusSum
+		const { bonusPercent, depositRate, percent, month, actionSetTotalSum } = this.props
 
 		window.addEventListener("load", this.greenLineSetWidth)
 		window.addEventListener("resize", this.greenLineSetWidth)
 
-		this.setState({
-			bonusSum,
-			totalSum,
-		})
-	}
-
-	getSum = (depositRate, percent, month) => {
-		const totalPercent = percent * 0.01
-		const sumDuringYear = Math.round(+depositRate * totalPercent)
-		const sum = Math.round((sumDuringYear / 12) * month)
-
-		return sum
-	}
-
-	// переделать
-	getBonusSum = (depositRate, bonusPercent, month) => {
-		const totalPercent = bonusPercent * 0.01
-		const maxInterestAmount = 1000000
-
-		let interestAmount = depositRate
-
-		if (depositRate > maxInterestAmount) {
-			interestAmount = maxInterestAmount
-		}
-
-		const sumDuringYear = Math.round(+interestAmount * totalPercent)
-		const sum = Math.round((sumDuringYear / 12) * month)
-
-		return sum
-	}
-
-	getSumFormat = sum => {
-		let depositRateArr = sum.toString().split('').reverse()
-		let indexsArr = []
-
-		for (let i = 0; i < depositRateArr.length; i++) {
-			if (i > 0 && i % 3 === 0) {
-				indexsArr.push(i)
-			}
-		}
-
-		for (let i = 0; indexsArr.length !== 0; i++) {
-			depositRateArr.splice(indexsArr.pop(), 0, ' ')
-		}
-
-		return depositRateArr.reverse().join('')
-	}
-
-	getDate = () => {
-		const { month } = this.state
-		const monthArr = [
-			'января',
-			'февраля',
-			'марта',
-			'апреля',
-			'мая',
-			'июня',
-			'июля',
-			'августа',
-			'сентября',
-			'октября',
-			'ноября',
-			'декабря',
-		]
-
-		const dateNow = new Date()
-		const dayNow = dateNow.getDate()
-		const monthNow = dateNow.getMonth()
-		const yearNow = dateNow.getFullYear()
-
-		const depositDate = new Date(yearNow, monthNow + month, dayNow)
-		const resultDay = depositDate.getDate()
-		const resultMonth = depositDate.getMonth()
-		const resultYear = depositDate.getFullYear()
-
-		return 'к ' + resultDay + ' ' + monthArr[resultMonth] + ' ' + resultYear
-	}
-
-	getBonusPercent = transactionRate => {
-		let bonusPercent = 0
-
-		if (transactionRate >= 70000) {
-			bonusPercent = 2.5
-		} else if (transactionRate >= 50000) {
-			bonusPercent = 2
-		} else if (transactionRate >= 30000) {
-			bonusPercent = 1.5
-		} else if (transactionRate >= 15000) {
-			bonusPercent = 1
-		} else if (transactionRate >= 7000) {
-			bonusPercent = 0.2
-		} else {
-			bonusPercent = 0
-		}
-
-		return bonusPercent
+		actionSetTotalSum(depositRate, percent, bonusPercent, month)
 	}
 
 	handleInputChange = event => {
-		const { percent, month, transactionRate } = this.state
-		const maxDepositRate = this.props
-		const bonusPercent = this.getBonusPercent(transactionRate)
-
-		let depositRate = +event.target.value
+		const { actionSetDepositRate, percent, month, transactionRate } = this.props
+		const depositRate = +event.target.value
 
 		if (isNaN(depositRate)) {
 			return
 		}
 
-		if (depositRate > maxDepositRate * 100) {
+		if (depositRate > this.props.maxDepositRate * 100) {
 			return
 		}
 
@@ -156,79 +46,62 @@ class Calculator extends React.Component {
 			return
 		}
 
-		const sum = this.getSum(depositRate, percent, month)
-		const bonusSum = this.getBonusSum(depositRate, bonusPercent, month)
-		const totalSum = sum + bonusSum
-
-		this.setState({
-			depositRate,
-			bonusSum,
-			totalSum,
-		})
+		actionSetDepositRate(depositRate, transactionRate, percent, month)
 	}
 
 	handleInputBlur = () => {
 		const {
-			bonusPercent,
-			percent,
-			month
-		} = this.state
-		const {
+			depositRate,
 			minDepositRate,
-			maxDepositRate
+			maxDepositRate,
+			transactionRate,
+			percent,
+			month,
+			actionSetDepositRate
 		} = this.props
 
-		let depositRate = this.state.depositRate
+		let newDepositRate = depositRate
 
-		if (depositRate < minDepositRate) {
-			depositRate = minDepositRate
+		if (newDepositRate < minDepositRate) {
+			newDepositRate = minDepositRate
 		}
 
-		if (depositRate > maxDepositRate) {
-			depositRate = maxDepositRate
+		if (newDepositRate > maxDepositRate) {
+			newDepositRate = maxDepositRate
 		}
 
-		const sum = this.getSum(depositRate, percent, month)
-		const bonusSum = this.getBonusSum(depositRate, bonusPercent, month)
-		const totalSum = sum + bonusSum
-
-		this.setState({
-			depositRate,
-			bonusSum,
-			totalSum,
-		})
+		actionSetDepositRate(
+			newDepositRate,
+			transactionRate,
+			percent,
+			month
+		)
 	}
 
 	handleInputRangeChange = depositRate => {
-		const { bonusPercent, percent, month } = this.state
-		const sum = this.getSum(depositRate[0], percent, month)
-		const bonusSum = this.getBonusSum(depositRate[0], bonusPercent, month)
-		const totalSum = sum + bonusSum
+		const { transactionRate, percent, month, actionSetDepositRate } = this.props
 
-		this.setState({
-			depositRate: depositRate[0],
-			bonusSum,
-			totalSum,
-		})
+		actionSetDepositRate(
+			depositRate[0],
+			transactionRate,
+			percent,
+			month
+		)
 	}
 
-	handleMonthClick = (month, percent) => () => {
-		const { depositRate, bonusPercent } = this.state
+	handleMonthClick = (newMonth, percent) => () => {
+		const { depositRate, transactionRate, month, actionSetMonth } = this.props
 
-		if (this.state.month === month) {
+		if (month === newMonth) {
 			return
 		}
 
-		const sum = this.getSum(depositRate, percent, month)
-		const bonusSum = this.getBonusSum(depositRate, bonusPercent, month)
-		const totalSum = sum + bonusSum
-
-		this.setState({
-			month,
+		actionSetMonth(
+			depositRate,
+			transactionRate,
 			percent,
-			bonusSum,
-			totalSum,
-		})
+			newMonth,
+		)
 	}
 
 	handleBonusInputChange = event => {
@@ -247,52 +120,40 @@ class Calculator extends React.Component {
 			return
 		}
 
-		const { percent, month, depositRate } = this.state
-		const bonusPercent = this.getBonusPercent(transactionRate)
-		const sum = this.getSum(depositRate, percent, month)
-		const bonusSum = this.getBonusSum(depositRate, bonusPercent, month)
-		const totalSum = sum + bonusSum
+		const { percent, month, depositRate, actionSetBonusPercent } = this.props
 
-		this.setState({
-			transactionRate,
-			bonusPercent,
-			bonusSum,
-			totalSum,
-		})
+		actionSetBonusPercent(depositRate, transactionRate, percent, month)
 	}
 
 	handleBonusInputBlur = () => {
 		const maxTransactionRate = 100000
+		const { percent, month, depositRate, actionSetBonusPercent } = this.props
 
-		let { transactionRate } = this.state
+		let transactionRate = this.props.transactionRate
 
 		if (transactionRate > maxTransactionRate) {
 			transactionRate = maxTransactionRate
 		}
 
-		this.setState({
-			transactionRate,
-		})
+		actionSetBonusPercent(depositRate, transactionRate, percent, month)
 	}
 
 	handleBonusInputRangeChange = transactionRate => {
-		const { depositRate, percent, month } = this.state
-		const bonusPercent = this.getBonusPercent(transactionRate[0])
+		const { depositRate, percent, month, actionSetBonusPercent } = this.props
 
-		const sum = this.getSum(depositRate, percent, month)
-		const bonusSum = this.getBonusSum(depositRate, bonusPercent, month)
-		const totalSum = sum + bonusSum
-
-		this.setState({
-			transactionRate: transactionRate[0],
-			bonusSum,
-			totalSum,
-			bonusPercent,
-		})
+		actionSetBonusPercent(
+			depositRate,
+			transactionRate[0],
+			percent,
+			month,
+		)
 	}
 
 	handleActiveTariffClick = tariff => () => {
-		this.props.actionSetTariff(tariff)
+		const { actionSetTariff, depositRate, transactionRate } = this.props
+
+		actionSetTariff(tariff, depositRate, transactionRate)
+
 		this.greenLineSetWidth(tariff.id)
 	}
 
@@ -306,7 +167,6 @@ class Calculator extends React.Component {
 		}
 
 		const elem = document.querySelector(`.CalculatorTabs__text[data-id="${id}"]`)
-		// console.log(document.querySelector(`.CalculatorTabs__text[data-id="${1}"`))
 		const elemWidth = elem.offsetWidth
 		const elemOffsetLeft = elem.offsetLeft
 		const line = document.querySelector('.CalculatorTariffTabs__green-line')
@@ -317,20 +177,18 @@ class Calculator extends React.Component {
 
 	render() {
 		const {
-			percent,
-			bonusPercent,
-			totalSum,
-			depositRate,
-			month,
-			transactionRate,
-		} = this.state
-		const {
 			tariffName,
 			minDepositRate,
 			maxDepositRate,
 			deposit,
 			activeTariff,
-			tariffList
+			tariffList,
+			bonusPercent,
+			percent,
+			totalSum,
+			month,
+			depositRate,
+			transactionRate
 		} = this.props
 
 		return (
@@ -358,7 +216,7 @@ class Calculator extends React.Component {
 									minDepositRate={minDepositRate}
 									maxDepositRate={maxDepositRate}
 									title={'Первоначальная сумма накопления'}
-									getSumFormat={this.getSumFormat}
+									getSumFormat={getSumFormat}
 									handleInputBlur={this.handleInputBlur}
 									handleInputChange={this.handleInputChange}
 									handleChange={this.handleInputRangeChange}
@@ -380,9 +238,9 @@ class Calculator extends React.Component {
 							<div className="Calculator__rigth">
 								<CalculatorInfoPanel
 									totalPercent={bonusPercent + percent}
-									bonusSum={this.getSumFormat(totalSum)}
-									finalSum={this.getSumFormat(totalSum + depositRate)}
-									date={this.getDate()}
+									bonusSum={getSumFormat(totalSum)}
+									finalSum={getSumFormat(totalSum + depositRate)}
+									date={getDate(month)}
 								/>
 							</div>
 						</div>
@@ -394,16 +252,27 @@ class Calculator extends React.Component {
 }
 
 const mapStateToProps = state => ({
-	tariffList: state.tariff.tariffList,
+	activeTariff: state.tariff.activeTariff,
+	tariffName: state.tariff.tariffName,
+	deposit: state.tariff.deposit,
 	minDepositRate: state.tariff.minDepositRate,
 	maxDepositRate: state.tariff.maxDepositRate,
-	deposit: state.tariff.deposit,
-	activeTariff: state.tariff.activeTariff
+	month: state.tariff.month,
+	depositRate: state.tariff.depositRate,
+	transactionRate: state.tariff.transactionRate,
+	percent: state.tariff.percent,
+	bonusPercent: state.tariff.bonusPercent,
+	totalSum: state.tariff.totalSum,
+	tariffList: state.tariff.tariffList,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators(
 	{
-		actionSetTariff
+		actionSetTariff,
+		actionSetTotalSum,
+		actionSetDepositRate,
+		actionSetMonth,
+		actionSetBonusPercent
 	},
 	dispatch
 )
