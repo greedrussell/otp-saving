@@ -8,6 +8,7 @@ import ChartDesktopPremiumPNG from '../../assets/img/how-it-work__desktop--premi
 import ChartMobilePremiumPNG from '../../assets/img/how-it-work__mobile--premium.png'
 import ChartMobilePNG from '../../assets/img/how-it-work__mobile.png'
 import PDF from '../../assets/pdf/how-it-work.pdf'
+import PremiumPDF from '../../assets/pdf/how-it-work--premium.pdf'
 
 const HowItWork = ({ tariffName }) => (
 	<section className="HowItWork">
@@ -83,7 +84,7 @@ const HowItWork = ({ tariffName }) => (
 				</p>
 				{
 					tariffName === 'Накопительный счет Premium' ? (
-						<a href={PDF} className="HowItWork__bottom__pdf-block">
+						<a href={PremiumPDF} className="HowItWork__bottom__pdf-block">
 							<img
 								className="HowItWork__bottom__pdf-block__img"
 								src={PdfSVG}

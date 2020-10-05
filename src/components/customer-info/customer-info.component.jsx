@@ -4,8 +4,9 @@ import { connect } from 'react-redux'
 
 import './customer-info.css'
 import CardPNG from '../../assets/img/customer-info.png'
-import PdfSVG from '../../assets/img/pdf.svg'
 import PDF from '../../assets/pdf/customer-info.pdf'
+import PremiumPDF from '../../assets/pdf/customer-info--premium.pdf'
+import PdfSVG from '../../assets/img/pdf.svg'
 
 const CustomerInfoList = () => (
 	<ul className="CustomerInfoList">
@@ -94,18 +95,18 @@ class CustomerInfo extends React.Component {
 											src={PdfSVG}
 											alt="Иконка PDF файла"
 										/>
-										<div href={PDF} className="CustomerInfo__footer__block__text">
+										<div className="CustomerInfo__footer__block__text">
 											Тарифы по карте
 										</div>
 									</a>
 								) : (
-										<a href={PDF} className="CustomerInfo__footer__block">
+										<a href={PremiumPDF} className="CustomerInfo__footer__block">
 											<img
 												className="CustomerInfo__footer__block__img"
 												src={PdfSVG}
 												alt="Иконка PDF файла"
 											/>
-											<div href={PDF} className="CustomerInfo__footer__block__text">
+											<div className="CustomerInfo__footer__block__text">
 												Тарифы по карте Накопительный счет + Premium
 											</div>
 										</a>
