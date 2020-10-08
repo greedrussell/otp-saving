@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-scroll'
 
 import './about-action.css'
 import CardSVG from '../../assets/img/about-action__card.svg'
@@ -38,12 +39,11 @@ const AboutAction = () => (
 					textComponent={
 						<p className="AboutActionItem__text">
 							и получите{' '}
-							<a
-								target="_blank"
-								rel="noopener noreferrer"
-								href="https://cards.otpbank.ru/debit/deposit-claim/?_ga=2.193274602.614762482.1597646882-974556188.1594278884" className="AboutActionItem__text-green">
-								карту «ОТП Покупки»&nbsp;
-							</a>
+							<Link to="CustomerInfo" smooth={true} duration={500}>
+								<span className="AboutActionItem__text-green">
+									карту «ОТП Покупки»&nbsp;
+								</span>
+							</Link>
 							. Карту можно оформить в отделении банка
 						</p>
 					}

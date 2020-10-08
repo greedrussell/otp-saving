@@ -11,7 +11,7 @@ const CalculatorBonusInput = ({
 	handleBonusInputRangeChange,
 }) => {
 	const MIN = 0
-	const MAX = 100000
+	const MAX = 150000
 	const STEP = 1000
 
 	return (

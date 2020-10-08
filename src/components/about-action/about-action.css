@@ -113,6 +113,7 @@
   color: #428B26;
   font-family: 'SourceSansProBold', sans-serif;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .AboutActionItem__bg {

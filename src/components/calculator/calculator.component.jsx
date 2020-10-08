@@ -109,7 +109,7 @@ class Calculator extends React.Component {
 	}
 
 	handleBonusInputChange = event => {
-		const maxTransactionRate = 200000
+		const maxTransactionRate = 150000
 		const transactionRate = +event.target.value
 
 		if (isNaN(transactionRate)) {
@@ -130,7 +130,7 @@ class Calculator extends React.Component {
 	}
 
 	handleBonusInputBlur = () => {
-		const maxTransactionRate = 200000
+		const maxTransactionRate = 150000
 		const { percent, month, depositRate, actionSetBonusPercent, tariffName } = this.props
 
 		let transactionRate = this.props.transactionRate
@@ -211,7 +211,7 @@ class Calculator extends React.Component {
 								по накопительному счету
 							</span>
 						</h2>
-						<PlusesList />
+						<PlusesList tariffName={tariffName} />
 						<div className="Calculator__main">
 							<div className="Calculator__left">
 								{/* сумма депозита */}

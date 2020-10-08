@@ -8,7 +8,7 @@ import PDF from '../../assets/pdf/customer-info.pdf'
 import PremiumPDF from '../../assets/pdf/customer-info--premium.pdf'
 import PdfSVG from '../../assets/img/pdf.svg'
 
-const CustomerInfoList = () => (
+const CustomerInfoList = ({ tariffName }) => (
 	<ul className="CustomerInfoList">
 		<li className="CustomerInfoList__item">
 			Обслуживание карты при выполнении условий &mdash;&nbsp;
@@ -18,10 +18,20 @@ const CustomerInfoList = () => (
 		</li>
 		<li className="CustomerInfoList__item">
 			Дополнительно&nbsp;
-			<p className="inline">
-				до&nbsp;
-				<span className="CustomerInfoList__item__green">2,5%&nbsp;</span>
-			</p>
+			{
+				tariffName === 'Накопительный счет Premium' ? (
+					<p className="inline">
+						до&nbsp;
+						<span className="CustomerInfoList__item__green">2%&nbsp;</span>
+					</p>
+				) : (
+						<p className="inline">
+							до&nbsp;
+							<span className="CustomerInfoList__item__green">2,5%&nbsp;</span>
+						</p>
+					)
+			}
+
 			годовых&nbsp;
 			<p className="inline">к ставке&nbsp;</p>
 			<p className="inline">по накопительному счету</p>
@@ -84,7 +94,7 @@ class CustomerInfo extends React.Component {
 									alt="Карта ОПТ покупки"
 								/>
 							</div>
-							<CustomerInfoList />
+							<CustomerInfoList tariffName={this.props.tariffName} />
 						</div>
 						<div className="CustomerInfo__footer">
 							{
@@ -116,10 +126,6 @@ class CustomerInfo extends React.Component {
 						</div>
 					</div>
 				</section>
-				{/* <Popup
-					isActive={this.state.isActive}
-					handleCloseClick={this.handleCloseClick}
-				/> */}
 			</Element>
 		)
 	}

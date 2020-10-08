@@ -95,8 +95,8 @@ const initialState = {
           subTitle: '4% годовых',
         },
       ],
-      minDepositRate: 35000,
-      maxDepositRate: 30000000
+      minDepositRate: 1000,
+      maxDepositRate: 1000000
     },
   ]
 }
