@@ -22,6 +22,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "serv": "node server/app.js",
     "deploy": "git push heroku master && git push origin master"
   },
   "eslintConfig": {
