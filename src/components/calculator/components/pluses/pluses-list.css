@@ -31,6 +31,18 @@
   max-width: 560px;
 }
 
+@media (min-width: 992px) {
+  .PlusesList__sub-title {
+    padding: 0 32px;  
+  }
+}
+
+@media (min-width: 1200px) {
+  .PlusesList__sub-title {
+    padding: 0;  
+  }
+}
+
 .PlusesList__sub-title__green {
   color: #428B26;
 }
