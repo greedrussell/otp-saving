@@ -60,23 +60,21 @@ const AboutAction = () => (
 				<AboutActionItem
 					textComponent={
 						<p className="AboutActionItem__text">
-							по карте и получайте бонус: дополнительно до 2,5% годовых к ставке
-							по накопительному счету
+							От 15 000 рублей в месяц
 						</p>
 					}
 					imgUrl={PercentSVG}
 					numberImgUrl={TwoPNG}
 					index={1}>
 					<h3 className="title-h3 AboutActionItem__title">
-						Совершайте&nbsp;
-						<span className="AboutActionItem__title__inline">покупки</span>
+						Совершайте покупки&nbsp;
+						<span className="AboutActionItem__title__inline"> по карте</span>
 					</h3>
 				</AboutActionItem>
 				<AboutActionItem
 					textComponent={
 						<p className="AboutActionItem__text">
-							Станьте одним из 100 обладателей денежных призов с помощью ваших
-							обычных покупок по карте
+							Дополнительно до 2.5% к ставке счета
 						</p>
 					}
 					imgUrl={BoxSVG}

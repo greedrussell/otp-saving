@@ -217,3 +217,12 @@
   width: 12px;
   height: 8px;
 }
+
+.InfoBlock__info {
+  font-family: 'SourceSansProBold', sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 28px;
+  color: #000;
+  margin-top: 36px;
+}
