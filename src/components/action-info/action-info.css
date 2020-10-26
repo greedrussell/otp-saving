@@ -43,8 +43,6 @@
 
 @media (min-width: 768px) {
   .ActionInfo__left__text {
-    font-size: 24px;
-    line-height: 32px;
     max-width: 480px;
   }
 }
