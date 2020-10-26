@@ -49,12 +49,11 @@ const InfoBlock = () => (
 					Призовой фонд
 				</h3>
 				<p className="InfoBlock__content__item__text">
-					Получите удвоение остатка на вашем накопительном счете до 350 000
-					рублей или другие денежные призы!
+					Главный приз — удвоение остатка на вашем накопительном счете на сумму до 350 000 рублей.
+					А также денежные призы до 50 000 рублей
 				</p>
 			</div>
 		</div>
-		<p className='InfoBlock__info'>Акция «Будь в плюсе» завершена, победители получат призы до 30 ноября 2020.</p>
 		<div className="InfoBlock__pdf-block">
 			<img
 				className="InfoBlock__pdf-block__img"
@@ -92,6 +91,7 @@ class ActionInfo extends React.Component {
 					<div className="ActionInfo__wrapper">
 						<div className="ActionInfo__left">
 							<h2 className="ActionInfo__left__title">Акция «Будь в плюсе»</h2>
+							<p className='ActionInfo__left__text'>Акция завершена, победители получат призы до 30 ноября 2020</p>
 							{isActive && <InfoBlock />}
 							<ToggleButton
 								isActive={isActive}

@@ -1,5 +1,5 @@
 .ActionInfo {
-  background-color: #DBF4FA;
+  background-color: #E8F3FC;
   padding: 45px 0;
 }
 
@@ -25,7 +25,7 @@
   letter-spacing: -0.02em;
   color: #000;
   font-size: 34px;
-  line-height: 48px;
+  line-height: 40px;
 }
 
 @media (min-width: 768px) {
@@ -53,11 +53,12 @@
 }
 
 .ActionInfo__left__text {
-  font-family: 'SquadExtraBold', sans-serif;
-  font-weight: 800;
+  font-family: 'SourceSansProBold', sans-serif;
+  font-weight: bold;
   font-size: 20px;
   line-height: 28px;
-  color: #494949;
+  color: #898989;
+  margin-bottom: 28px;
 }
 
 @media (min-width: 768px) {

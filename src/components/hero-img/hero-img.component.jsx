@@ -12,6 +12,14 @@ const HeroImgPluses = () => (
 			<img src={ArrowSVG} alt="" className="HeroImg__list__item__img" />
 			<p className="HeroImg__list__item__text">До 6,5% годовых</p>
 		</li>
+		<li className="HeroImg__list__item">
+			<img src={ArrowSVG} alt="" className="HeroImg__list__item__img" />
+			<p className="HeroImg__list__item__text">Ежемесячный доход по счёту</p>
+		</li>
+		<li className="HeroImg__list__item">
+			<img src={ArrowSVG} alt="" className="HeroImg__list__item__img" />
+			<p className="HeroImg__list__item__text">Снятие и пополнение без ограничений</p>
+		</li>
 	</ul>
 )
 
