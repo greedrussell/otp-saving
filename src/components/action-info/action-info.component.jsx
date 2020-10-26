@@ -90,7 +90,7 @@ class ActionInfo extends React.Component {
 				<div className="container">
 					<div className="ActionInfo__wrapper">
 						<div className="ActionInfo__left">
-							<h2 className="ActionInfo__left__title">Акция «Будь в плюсе»</h2>
+							<h2 className="title-h2 ActionInfo__left__title">Акция «Будь в плюсе»</h2>
 							<p className='ActionInfo__left__text'>Акция завершена, победители получат призы до 30 ноября 2020</p>
 							{isActive && <InfoBlock />}
 							<ToggleButton
