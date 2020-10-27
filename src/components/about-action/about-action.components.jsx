@@ -60,7 +60,7 @@ const AboutAction = () => (
 				<AboutActionItem
 					textComponent={
 						<p className="AboutActionItem__text">
-							От 15 000 рублей в месяц
+							От 7 000 рублей в месяц
 						</p>
 					}
 					imgUrl={PercentSVG}

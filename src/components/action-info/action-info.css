@@ -41,12 +41,6 @@
   margin-bottom: 28px;
 }
 
-@media (min-width: 768px) {
-  .ActionInfo__left__text {
-    max-width: 480px;
-  }
-}
-
 .ActionInfo__left__text + .ToggleButton {
   margin-top: 24px;
 }
