@@ -82,7 +82,7 @@ const AboutAction = () => (
 					index={2}>
 					<h3 className="title-h3 AboutActionItem__title">
 						Получайте&nbsp;
-						<span className="AboutActionItem__title__inline">призы</span>
+						<span className="AboutActionItem__title__inline">бонус</span>
 					</h3>
 				</AboutActionItem>
 			</div>
