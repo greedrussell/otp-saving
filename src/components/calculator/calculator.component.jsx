@@ -33,7 +33,7 @@ class Calculator extends React.Component {
 	handleInputChange = event => {
 		const { actionSetDepositRate, percent, month, transactionRate, tariffName } = this.props
 		const depositRate = +event.target.value
-
+		console.log('on change')
 		if (isNaN(depositRate)) {
 			return
 		}

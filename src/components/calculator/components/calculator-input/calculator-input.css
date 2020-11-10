@@ -11,12 +11,35 @@
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 2px;
+  position: relative;
+}
+
+.CalculatorInput__input__text {
+  font-family: 'SourceSansProBold', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000;
+  position: absolute;
+  top: 0px;
+  left: 18px;
+  letter-spacing: 0.2px;
+}
+
+.CalculatorInput__input__text__line {
+  width: 1px;
+  height: 20px;
+  background-color: #000;
+  display: table;
+  position: absolute;
+  left: 0;
+  top: 4px;
 }
 
 .CalculatorInput__input {
   width: 100%;
   padding: 16px;
-  border: 1px solid #C6C6C6;
+  border: 2px solid #C6C6C6;
   border-radius: 12px;
   height: 56px;
   transition: 0.4s;
@@ -30,6 +53,7 @@
   line-height: 24px;
   color: #000;
   margin-bottom: -16px;
+  letter-spacing: 0.2px;
 }
 
 .CalculatorInput__input:focus,
