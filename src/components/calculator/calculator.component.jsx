@@ -183,6 +183,9 @@ class Calculator extends React.Component {
 	handleRobotClick = () => {
 		console.log('handleRobotClick')
 	}
+	handleTest = () => {
+		return 'as robot';
+	}
 
 	render() {
 		const {
