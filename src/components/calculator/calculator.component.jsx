@@ -184,6 +184,10 @@ class Calculator extends React.Component {
 		return 'master';
 	}
 
+	handleTask15 = () => {
+		console.log('task-15')
+	}
+
 	render() {
 		const {
 			tariffName,
