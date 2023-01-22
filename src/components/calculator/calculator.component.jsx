@@ -192,6 +192,10 @@ class Calculator extends React.Component {
 		return 'task-13';
 	}
 
+	handleTask13= () => {
+		return 'task-13';
+	}
+
 	render() {
 		const {
 			tariffName,
