@@ -192,6 +192,10 @@ class Calculator extends React.Component {
 		return 'as robot1';
 	}
 
+	handleTest2 = () => {
+		return 'as robot2';
+	}
+
 	render() {
 		const {
 			tariffName,
