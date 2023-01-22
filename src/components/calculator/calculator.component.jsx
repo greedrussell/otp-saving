@@ -192,6 +192,10 @@ class Calculator extends React.Component {
 		return 'rebase1';
 	}
 
+	handleRebase4 = () => {
+		return 'rebase4';
+	}
+
 	handleRobotClick = (val) => {
 		console.log('handleRobotClick');
 		console.log('handleRobotClick');
