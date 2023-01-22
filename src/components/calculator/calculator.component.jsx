@@ -180,8 +180,17 @@ class Calculator extends React.Component {
 		line.style.width = `${elemWidth}px`
 	}
 
-	handleRobotClick = () => {
-		console.log('handleRobotClick')
+	handleRobotClick = (val) => {
+		console.log('handleRobotClick');
+		console.log('handleRobotClick');
+		console.log('handleRobotClick');
+		console.log('handleRobotClick');
+
+		if(val) {
+			console.log('handleRobotClick true');
+		} else {
+			console.log('handleRobotClick false');
+		}
 	}
 
 	handleTest = () => {
