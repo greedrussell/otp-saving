@@ -188,8 +188,8 @@ class Calculator extends React.Component {
 		return 'rebase1';
 	}
 
-	handleTask12 = () => {
-		return 'task-12';
+	handleRebase1 = () => {
+		return 'task-10';
 	}
 
 	handleTask13= () => {
