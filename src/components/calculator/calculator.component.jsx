@@ -185,12 +185,6 @@ class Calculator extends React.Component {
 		console.log('handleRobotClick');
 		console.log('handleRobotClick');
 		console.log('handleRobotClick');
-
-		if(val) {
-			console.log('handleRobotClick true');
-		} else {
-			console.log('handleRobotClick false');
-		}
 	}
 
 	handleTest = () => {
