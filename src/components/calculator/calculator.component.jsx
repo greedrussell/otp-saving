@@ -180,16 +180,8 @@ class Calculator extends React.Component {
 		line.style.width = `${elemWidth}px`
 	}
 
-	handleTask11 = () => {
-		return 'task-11';
-	}
-
-	handleTask12 = () => {
-		return 'task-12';
-	}
-
-	handleTask13= () => {
-		return 'task-13';
+	handleNewMaster = () => {
+		return 'master';
 	}
 
 	render() {
